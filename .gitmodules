@@ -1,0 +1,6 @@
+[submodule "lib/libft/00-Libft"]
+	path = lib/libft/00-Libft
+	url = https://github.com/Clmntsnd/00-Libft.git
+[submodule "lib/00-Libft"]
+	path = lib/00-Libft
+	url = https://github.com/Clmntsnd/00-Libft.git
