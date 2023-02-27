@@ -6,7 +6,7 @@
 /*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:28:35 by loulou            #+#    #+#             */
-/*   Updated: 2023/02/23 10:42:43 by loulou           ###   ########.fr       */
+/*   Updated: 2023/02/26 10:24:12 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void check_arg(int ac, char **av)
 		int i = 1;
 		int j = 0;
 		int flag = 0;
+		
 		/*
 		** case with several args
 		*/
