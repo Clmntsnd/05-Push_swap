@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:28:23 by loulou            #+#    #+#             */
-/*   Updated: 2023/02/21 22:53:08 by loulou           ###   ########.fr       */
+/*   Updated: 2023/02/27 14:44:38 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "../lib/00-Libft/libft.h"
+#include "../lib/Libft/libft.h"
+
+void	print_err(int flag);
