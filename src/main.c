@@ -6,7 +6,7 @@
 /*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:28:35 by loulou            #+#    #+#             */
-/*   Updated: 2023/02/28 15:09:38 by csenand          ###   ########.fr       */
+/*   Updated: 2023/03/03 15:59:21 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,14 @@ void check_arg(int ac, char **av)
 				// printf("flag : %d\n", flag);
 				if (flag == 1 || flag == 2)
 				{
-					printf("Error\n");
+					printf("%sError%s\n", R, RESET);
 					exit (1);
 				}
 			}
 			i++;
 		}
 	}
-	printf("All args are acceptable ✅\n");
+	printf("%sAll args are acceptable ✅\n%s", G, RESET);
 }
 
 int main(int ac, char **av)
