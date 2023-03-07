@@ -6,7 +6,7 @@
 /*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:37:00 by csenand           #+#    #+#             */
-/*   Updated: 2023/01/20 10:01:13 by csenand          ###   ########.fr       */
+/*   Updated: 2023/03/07 11:48:13 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,6 @@
 // the parameter count.
 
 #include "libft.h"
-
-// static int	ft_countwords(const char *str, char c);
-
-// static char	*word_dup(const char *str, int start, int finish);
-
-// static void	*clear(char **words_array);
-
-// static int	split_s(char **words_array, char const *s, char c);
-
 
 static int	ft_countwords(const char *str, char c)
 {
