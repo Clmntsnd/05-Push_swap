@@ -6,7 +6,7 @@
 #    By: csenand <csenand@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 15:11:55 by csenand           #+#    #+#              #
-#    Updated: 2023/02/08 10:47:37 by csenand          ###   ########.fr        #
+#    Updated: 2023/03/09 13:45:14 by csenand          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,10 +31,10 @@
 #	** SOURCE : https://github.com/amjadmajid/Makefile	**
 
 CC			=	gcc
-CFLAGS		=	-Wall -Wextra -Werror -I.
+CFLAGS		=	-Wall -Wextra -Werror
 NAME		=	libft.a
 
-SRC			= 	ft_atof.c ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
+SRC			= 	ft_atol.c ft_atof.c ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
 				ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c \
 				ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c \
 				ft_putchar_fd.c ft_putstr_fd.c ft_split.c ft_strdup.c \

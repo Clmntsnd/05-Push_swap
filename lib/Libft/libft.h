@@ -6,7 +6,7 @@
 /*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 12:30:27 by csenand           #+#    #+#             */
-/*   Updated: 2022/11/09 12:54:09 by csenand          ###   ########.fr       */
+/*   Updated: 2023/03/09 13:44:49 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ void	*ft_memset(void *b, int c, size_t len);
 /* Conversion functions */
 
 int		ft_atoi(const char *str);
+long	ft_atol(const char *str);
+double	ft_atof(const char *str);
 char	*ft_itoa(int n);
 int		ft_tolower(int c);
 int		ft_toupper(int c);

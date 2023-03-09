@@ -23,6 +23,7 @@ SRCS        :=      lib/Libft/ft_strnstr.c \
                           lib/Libft/ft_strlcpy.c \
                           lib/Libft/ft_strlen.c \
                           lib/Libft/ft_atof.c \
+                          lib/Libft/ft_atol.c \
                           lib/Libft/ft_lstlast.c \
                           lib/Libft/ft_memcmp.c \
                           lib/Libft/ft_putnbr_fd.c \

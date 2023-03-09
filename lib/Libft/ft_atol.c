@@ -1,57 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atof.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/08 10:44:41 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/09 13:44:33 by csenand          ###   ########.fr       */
+/*   Created: 2023/03/09 13:37:44 by csenand           #+#    #+#             */
+/*   Updated: 2023/03/09 13:46:38 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	check_sign(const char *str)
+long	ft_atol(const char *str)
 {
-	int	i;
-	int	sign;
+	long	i;
+	int		sign;
+	long	res;
 
 	i = 0;
 	sign = 1;
+	res = 0;
+	if (!str)
+		return (0);
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
+		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
 			sign *= -1;
-	}
-	return (sign);
-}
-
-double	ft_atof(const char *str)
-{
-	int		i;
-	int		sign;
-	double	result;
-	double	decimal;
-
-	if (!str)
-		return (0);
-	i = 0;
-	result = 0.0;
-	decimal = 1.0;
-	if (str[i])
-	{
-		sign = check_sign(str);
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-		result = result * 10 + (str[i++] - '0');
-	if (str[i] == '.')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+	while ((str[i] >= '0' && str[i] <= '9'))
 	{
-		result = result * 10 + (str[i++] - '0');
-		decimal *= 10;
+		res = res * 10 + (str[i] - 48);
+		i++;
 	}
-	return (sign * result / decimal);
+	return (sign * res);
 }
