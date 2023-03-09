@@ -6,7 +6,7 @@
 /*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:28:35 by loulou            #+#    #+#             */
-/*   Updated: 2023/03/07 15:22:25 by csenand          ###   ########.fr       */
+/*   Updated: 2023/03/08 17:04:31 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,72 +18,75 @@
 **	 - No duplicates (twice the same nb)
 **	 - No int above int_max (2147483647) or below int_min (-2147483648)
 */
+
+void	ft_err()
+{
+	printf("%sError%s\n", R, RESET);
+	exit(1);
+}
+
+void add_node(int data)
+{
+    t_node *new_node;
+	
+	new_node = malloc(sizeof(t_node));
+    if (!new_node)
+        return(0);
+    new_node->data = data;
+    new_node->next = NULL;
+}
+
 void check_arg(int ac, char **av)
 {
+	t_stack	*head;
+	t_stack	*current;
+	int i;
+	
 	/*
-	** case with several args
+	** case with only one arg (i.e. string) (not a valid)
+	*/
+	if (ac == 2)
+		printf("%sError%s\n", R, RESET);
+	
+	/*
+	** case with several args (valid)
 	*/
 	if (ac > 2)
 	{
-		int i;
 		int j;
-		int flag;
 		
-		i = 0;
+		i = 1;
 		while (i < ac)
 		{
-			j = 0;
-			flag = 0;
-			while (av[++i])
+			j = -1;
+			while (av[i][++j])
 			{
 				if ((av[i][j] == '-' || av[i][j] == '+') && av[i][j] != '\0')
 					j++;
 				if (!ft_isdigit(av[i][j]))
-					flag = 1;
+					ft_err();
 				if((ft_atoi(av[i]) == -2147483648) || (ft_atoi(av[i]) == 2147483647))
-					flag = 2;
-				if (flag == 1 || flag == 2)
-				{
-					printf("%sError%s\n", R, RESET);
-					exit (1);
-				}
+					ft_err();
+				add_node(av[i]);
 			}
-			// i++;
+			i++;
 		}
 	}
-	
-	/*
-	** case with only one arg (i.e. string)
-	*/
-	if (ac == 2)
+	//creation de la premiere node avec le premier arg (i.e. av[1])
+	head = add_node(ft_atoi(av[1]));
+	//copy de la head pour ne pas la perdre
+	current = head;
+	//creation des autres nodes
+	i = 0;
+	while(i < ac)
+		ft_lstadd_back(av[i], current);
+	//Imprimmer la liste
+	current = head;
+	while (current->next)
 	{
-		int		i;
-		int		j;
-		int 	flag;
-		char	**tab;
-
-		tab = ft_split(av[1], ' ');
-		if (!tab)
-			printf("%sError%s\n", R, RESET);
-		i = - 1;
-		while (tab[++i])
-		{
-			flag = 0;
-			j = 0;
-			if ((tab[i][j] == '-' || tab[i][j] == '+') && tab[i][j] != '\0')
-				j++;
-			if (!ft_isdigit(tab[i][j]))
-				flag = 1;
-			if((ft_atoi(tab[i]) == INT_MIN) || (ft_atoi(tab[i]) == INT_MAX))
-				flag = 2;
-			if (flag == 1 || flag == 2)
-			{
-				printf("%sError%s\n", R, RESET);
-				exit (1);
-			}
-		}
+		printf("%d\n", current->nbr);
+		current = current->next;
 	}
-	printf("%sAll args are acceptable ✅\n%s", G, RESET);
 }
 
 int main(int ac, char **av)

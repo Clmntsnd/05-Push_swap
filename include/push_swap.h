@@ -6,7 +6,7 @@
 /*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:28:23 by loulou            #+#    #+#             */
-/*   Updated: 2023/03/07 12:14:06 by csenand          ###   ########.fr       */
+/*   Updated: 2023/03/08 17:00:35 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,15 @@
 # define R		"\033[1;31m"
 # define RESET	"\033[1;0m"
 
-void	print_err(int flag);
+typedef struct s_stack
+{
+	int nbr; //nb qui vont etre stock dans une structure
+	struct s_stack	*next;
+} t_stack;
+
+typedef struct s_node {
+    int data;
+    struct s_node *next;
+} t_node;
+
+void	ft_err();
