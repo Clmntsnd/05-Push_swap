@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:20:50 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/10 16:25:44 by csenand          ###   ########.fr       */
+/*   Updated: 2023/03/10 15:31:10 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_atoi_base(const char *str, int str_base)
 {
 	int	i;
 	int	sign;
 	int	res;
+	int	num;
 
 	i = 0;
 	sign = 1;
 	res = 0;
+	num = 0;
+
 	if (!str)
 		return (0);
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
@@ -31,32 +34,33 @@ int	ft_atoi(const char *str)
 			sign *= -1;
 		i++;
 	}
-	while ((str[i] >= '0' && str[i] <= '9'))
+	while(str[i])
 	{
-		res = res * 10 + (str[i] - 48);
+		if ((str[i] >= '0' && str[i] <= '9'))
+			num = str[i] - 48;
+		else if ((str[i] >= 'a' && str[i] <= 'f'))
+			num = (str[i] - 'a') + 10;
+		else if ((str[i] >= 'A' && str[i] <= 'F'))
+			num = (str[i] - 'A') + 10;
+		else
+			break;
+		if (num < str_base)
+			res = res * str_base + num;
+		else
+			break;
 		i++;
 	}
 	return (sign * res);
 }
 
-/*
 int	main(void)
 {
-	char	z[10];
-	char	x[] = "---+--+1234ab567";
-	char	y[] = "1234ab567";
-	char	w[] = "\n\t -1--+--+1234ab567";
+	char	x[] = "42";
+	char	y[] = "1CDEF";
+	char	w[] = "\n\t -1234ab";
 
-	printf("ft_atoi\n");
-	printf("%d\n", ft_atoi(z));
-	printf("%d\n", ft_atoi(x));
-	printf("%d\n", ft_atoi(y));
-	printf("%d\n", ft_atoi(w));
-	printf("\n");
-	printf("atoi\n");
-	printf("%d\n", atoi(z));
-	printf("%d\n", atoi(x));
-	printf("%d\n", atoi(y));
-	printf("%d\n", atoi(w));
+	printf("ft_atoi_base\n");
+	printf("%d\n", ft_atoi_base(x, 10));
+	printf("%d\n", ft_atoi_base(y, 13));
+	printf("%d\n", ft_atoi_base(w, 16));
 }
-*/
