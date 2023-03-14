@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/08 15:28:23 by loulou            #+#    #+#             */
-/*   Updated: 2023/03/14 18:06:35 by loulou           ###   ########.fr       */
+/*   Created: 2022/10/19 09:56:02 by csenand           #+#    #+#             */
+/*   Updated: 2023/03/14 17:23:33 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <limits.h>
-# include "../lib/Libft/include/libft.h"
+#include "../include/libft.h"
 
-# define G 		"\033[1;32m"
-# define R		"\033[1;31m"
-# define RESET	"\033[1;0m"
-
-typedef struct s_node 
+int	ft_tolower(int c)
 {
-	int 			data;
-	struct s_node 	*next;
-} t_node;
-
-typedef struct s_info
-{
-	t_node	*a;
-} t_info;
+	if (c >= 65 && c <= 90)
+		c += 32;
+	return (c);
+}
 
 /*
-**	Print Error Message
+int main()
+{
+	printf("%c\n", ft_tolower(65));
+}
 */
-void	ft_err(const char *msg);

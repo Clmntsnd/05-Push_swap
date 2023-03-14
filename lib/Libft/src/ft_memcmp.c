@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/08 15:28:23 by loulou            #+#    #+#             */
-/*   Updated: 2023/03/14 18:06:35 by loulou           ###   ########.fr       */
+/*   Created: 2022/11/01 11:40:54 by csenand           #+#    #+#             */
+/*   Updated: 2023/03/14 17:23:33 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <limits.h>
-# include "../lib/Libft/include/libft.h"
+#include "../include/libft.h"
 
-# define G 		"\033[1;32m"
-# define R		"\033[1;31m"
-# define RESET	"\033[1;0m"
-
-typedef struct s_node 
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int 			data;
-	struct s_node 	*next;
-} t_node;
+	unsigned int			i;
+	const unsigned char		*str1;
+	const unsigned char		*str2;
 
-typedef struct s_info
-{
-	t_node	*a;
-} t_info;
-
-/*
-**	Print Error Message
-*/
-void	ft_err(const char *msg);
+	if (!s1 || !s2)
+		return (0);
+	str1 = (const unsigned char *) s1;
+	str2 = (const unsigned char *) s2;
+	i = 0;
+	while (i < n)
+	{
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
+		i++;
+	}
+	return (0);
+}

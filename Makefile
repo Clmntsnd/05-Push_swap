@@ -15,51 +15,51 @@ FLAGS    	:= -Wall -Wextra -Werror -g
 #                                 PROGRAM'S SRCS                               #
 ################################################################################
 
-SRCS        :=      lib/Libft/ft_strnstr.c \
-                          lib/Libft/ft_isdigit.c \
-                          lib/Libft/ft_lstadd_back.c \
-                          lib/Libft/ft_putstr_fd.c \
-                          lib/Libft/ft_lstnew.c \
-                          lib/Libft/ft_strlcpy.c \
-                          lib/Libft/ft_strlen.c \
-                          lib/Libft/ft_atof.c \
-                          lib/Libft/ft_atol.c \
-                          lib/Libft/ft_lstlast.c \
-                          lib/Libft/ft_memcmp.c \
-                          lib/Libft/ft_putnbr_fd.c \
-                          lib/Libft/ft_lstclear.c \
-                          lib/Libft/ft_lstiter.c \
-                          lib/Libft/ft_strchr.c \
-                          lib/Libft/ft_striteri.c \
-                          lib/Libft/ft_bzero.c \
-                          lib/Libft/ft_strjoin.c \
-                          lib/Libft/ft_isascii.c \
-                          lib/Libft/ft_memcpy.c \
-                          lib/Libft/ft_isprint.c \
-                          lib/Libft/ft_putendl_fd.c \
-                          lib/Libft/ft_lstmap.c \
-                          lib/Libft/ft_lstsize.c \
-                          lib/Libft/ft_toupper.c \
-                          lib/Libft/ft_split.c \
-                          lib/Libft/ft_lstadd_front.c \
-                          lib/Libft/ft_strrchr.c \
-                          lib/Libft/ft_isalpha.c \
-                          lib/Libft/ft_memchr.c \
-                          lib/Libft/ft_putchar_fd.c \
-                          lib/Libft/ft_memset.c \
-                          lib/Libft/ft_substr.c \
-                          lib/Libft/ft_strncmp.c \
-                          lib/Libft/ft_strmapi.c \
-                          lib/Libft/ft_strtrim.c \
-                          lib/Libft/ft_memmove.c \
-                          lib/Libft/ft_strlcat.c \
-                          lib/Libft/ft_calloc.c \
-                          lib/Libft/ft_strdup.c \
-                          lib/Libft/ft_atoi.c \
-                          lib/Libft/ft_isalnum.c \
-                          lib/Libft/ft_lstdelone.c \
-                          lib/Libft/ft_itoa.c \
-                          lib/Libft/ft_tolower.c \
+SRCS        :=      lib/Libft/src/ft_strnstr.c \
+                          lib/Libft/src/ft_isdigit.c \
+                          lib/Libft/src/ft_lstadd_back.c \
+                          lib/Libft/src/ft_putstr_fd.c \
+                          lib/Libft/src/ft_lstnew.c \
+                          lib/Libft/src/ft_strlcpy.c \
+                          lib/Libft/src/ft_strlen.c \
+                          lib/Libft/src/ft_atof.c \
+                          lib/Libft/src/ft_atol.c \
+                          lib/Libft/src/ft_lstlast.c \
+                          lib/Libft/src/ft_memcmp.c \
+                          lib/Libft/src/ft_putnbr_fd.c \
+                          lib/Libft/src/ft_lstclear.c \
+                          lib/Libft/src/ft_lstiter.c \
+                          lib/Libft/src/ft_strchr.c \
+                          lib/Libft/src/ft_striteri.c \
+                          lib/Libft/src/ft_bzero.c \
+                          lib/Libft/src/ft_strjoin.c \
+                          lib/Libft/src/ft_isascii.c \
+                          lib/Libft/src/ft_memcpy.c \
+                          lib/Libft/src/ft_isprint.c \
+                          lib/Libft/src/ft_putendl_fd.c \
+                          lib/Libft/src/ft_lstmap.c \
+                          lib/Libft/src/ft_lstsize.c \
+                          lib/Libft/src/ft_toupper.c \
+                          lib/Libft/src/ft_split.c \
+                          lib/Libft/src/ft_lstadd_front.c \
+                          lib/Libft/src/ft_strrchr.c \
+                          lib/Libft/src/ft_isalpha.c \
+                          lib/Libft/src/ft_memchr.c \
+                          lib/Libft/src/ft_putchar_fd.c \
+                          lib/Libft/src/ft_memset.c \
+                          lib/Libft/src/ft_substr.c \
+                          lib/Libft/src/ft_strncmp.c \
+                          lib/Libft/src/ft_strmapi.c \
+                          lib/Libft/src/ft_strtrim.c \
+                          lib/Libft/src/ft_memmove.c \
+                          lib/Libft/src/ft_strlcat.c \
+                          lib/Libft/src/ft_calloc.c \
+                          lib/Libft/src/ft_strdup.c \
+                          lib/Libft/src/ft_atoi.c \
+                          lib/Libft/src/ft_isalnum.c \
+                          lib/Libft/src/ft_lstdelone.c \
+                          lib/Libft/src/ft_itoa.c \
+                          lib/Libft/src/ft_tolower.c \
                           src/utils.c \
                           src/main.c \
                           

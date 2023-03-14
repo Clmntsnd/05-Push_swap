@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/08 15:28:23 by loulou            #+#    #+#             */
-/*   Updated: 2023/03/14 18:06:35 by loulou           ###   ########.fr       */
+/*   Created: 2022/11/04 15:36:11 by csenand           #+#    #+#             */
+/*   Updated: 2023/03/14 17:23:33 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <limits.h>
-# include "../lib/Libft/include/libft.h"
-
-# define G 		"\033[1;32m"
-# define R		"\033[1;31m"
-# define RESET	"\033[1;0m"
-
-typedef struct s_node 
-{
-	int 			data;
-	struct s_node 	*next;
-} t_node;
-
-typedef struct s_info
-{
-	t_node	*a;
-} t_info;
-
 /*
-**	Print Error Message
+** 	DESCRIPTION
+** 	Returns the last node of the list.
+** 	
+**	PARAMETERS
+**	lst: The beginning of the list.
+**
+**	RETURN VALUE
+**	Last node of the list
 */
-void	ft_err(const char *msg);
+
+#include "../include/libft.h"
+
+t_list	*ft_lstlast(t_list *lst)
+{
+	t_list	*ptr_lst;
+
+	if (!lst)
+		return (0);
+	ptr_lst = lst;
+	while (ptr_lst && ptr_lst ->next != NULL)
+		ptr_lst = ptr_lst -> next;
+	return (ptr_lst);
+}
