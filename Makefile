@@ -1,103 +1,83 @@
-#  |  |  ___ \    \  |         |
-#  |  |     ) |  |\/ |   _  |  |  /   _ 
-# ___ __|  __/   |   |  (   |    <    __/ 
-#    _|  _____| _|  _| \__,_| _|\_\ \___|
-#                              by jcluzet
-################################################################################
-#                                     CONFIG                                   #
-################################################################################
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: loulou <loulou@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/18 15:11:55 by csenand           #+#    #+#              #
+#    Updated: 2023/03/14 20:40:58 by loulou           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-NAME        := push_swap
-CC        	:= gcc
-FLAGS    	:= -Wall -Wextra -Werror -g
+NAME		=	push_swap
 
-################################################################################
-#                                 PROGRAM'S SRCS                               #
-################################################################################
+CC			=	gcc
+CFLAGS		=	-Wall -Wextra -Werror
 
-SRCS        :=      lib/Libft/src/ft_strnstr.c \
-                          lib/Libft/src/ft_isdigit.c \
-                          lib/Libft/src/ft_lstadd_back.c \
-                          lib/Libft/src/ft_putstr_fd.c \
-                          lib/Libft/src/ft_lstnew.c \
-                          lib/Libft/src/ft_strlcpy.c \
-                          lib/Libft/src/ft_strlen.c \
-                          lib/Libft/src/ft_atof.c \
-                          lib/Libft/src/ft_atol.c \
-                          lib/Libft/src/ft_lstlast.c \
-                          lib/Libft/src/ft_memcmp.c \
-                          lib/Libft/src/ft_putnbr_fd.c \
-                          lib/Libft/src/ft_lstclear.c \
-                          lib/Libft/src/ft_lstiter.c \
-                          lib/Libft/src/ft_strchr.c \
-                          lib/Libft/src/ft_striteri.c \
-                          lib/Libft/src/ft_bzero.c \
-                          lib/Libft/src/ft_strjoin.c \
-                          lib/Libft/src/ft_isascii.c \
-                          lib/Libft/src/ft_memcpy.c \
-                          lib/Libft/src/ft_isprint.c \
-                          lib/Libft/src/ft_putendl_fd.c \
-                          lib/Libft/src/ft_lstmap.c \
-                          lib/Libft/src/ft_lstsize.c \
-                          lib/Libft/src/ft_toupper.c \
-                          lib/Libft/src/ft_split.c \
-                          lib/Libft/src/ft_lstadd_front.c \
-                          lib/Libft/src/ft_strrchr.c \
-                          lib/Libft/src/ft_isalpha.c \
-                          lib/Libft/src/ft_memchr.c \
-                          lib/Libft/src/ft_putchar_fd.c \
-                          lib/Libft/src/ft_memset.c \
-                          lib/Libft/src/ft_substr.c \
-                          lib/Libft/src/ft_strncmp.c \
-                          lib/Libft/src/ft_strmapi.c \
-                          lib/Libft/src/ft_strtrim.c \
-                          lib/Libft/src/ft_memmove.c \
-                          lib/Libft/src/ft_strlcat.c \
-                          lib/Libft/src/ft_calloc.c \
-                          lib/Libft/src/ft_strdup.c \
-                          lib/Libft/src/ft_atoi.c \
-                          lib/Libft/src/ft_isalnum.c \
-                          lib/Libft/src/ft_lstdelone.c \
-                          lib/Libft/src/ft_itoa.c \
-                          lib/Libft/src/ft_tolower.c \
-                          src/utils.c \
-                          src/main.c \
-                          
-OBJS        := $(SRCS:.c=.o)
+RM			=	rm -rf
 
-.c.o:
-	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
+SRCS_DIR	=	./src/
+SRCS_LST	= 	main.c \
+				utils.c
+				
+SRCS		=	$(addprefix $(SRCS_DIR), $(SRCS_LST))
 
-################################################################################
-#                                  Makefile  objs                              #
-################################################################################
+OBJS_DIR	=	./obj/
+OBJS_LST	=	$(patsubst %.c, %.o, $(SRCS_LST))
+OBJS		=	$(addprefix $(OBJS_DIR), $(OBJS_LST))
 
+HEADER_DIR	=	./include/
+HEADER_LST	=	push_swap.h
+HEADER	 	=	$(addprefix $(HEADER_DIR), $(HEADER_LST))
 
-CLR_RMV		:= \033[0m
-RED		    := \033[1;31m
-GREEN		:= \033[1;32m
-YELLOW		:= \033[1;33m
-BLUE		:= \033[1;34m
-CYAN 		:= \033[1;36m
-RM		    := rm -f
+LIBFT_DIR	=	./lib/libft/
+LIBFT		=	$(LIBFT_DIR)libft.a
+LIBFT_H		=	$(LIBFT_DIR)include/libft.h
 
-${NAME}:	${OBJS}
-			@echo "$(GREEN)Compilation ${CLR_RMV}of ${YELLOW}$(NAME) ${CLR_RMV}..."
-			${CC} ${FLAGS} -o ${NAME} ${OBJS}
-			@echo "$(GREEN)$(NAME) created[0m ✔️"
+# -- Colors -- #
+RESET	= \033[0m
+RED		= \033[0;31m
+GREEN	= \033[0;32m
+YELLOW	= \033[0;33m
+BLUE	= \033[0;34m
+PURPLE	= \033[0;35m
+CYAN	= \033[0;36m
 
-all:		${NAME}
+# -- Executable's creation -- #
+all : dir $(NAME)
 
-bonus:		all
+# -- Compile library -- #
+$(NAME): $(OBJS)
+	@make -C $(LIBFT_DIR)
+	@$(CC) $(CFLAGS) $(SRCS) $(LIBFT) -o $(NAME)
+	@echo "✅ $(GREEN)$(NAME)'s exectuable successfully created. ✅     $(RESET)"
 
-clean:
-			@ ${RM} *.o */*.o */*/*.o
-			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)objs $(GREEN)✔️"
+# -- Create all files .o (object) from files .c (source code) -- #
+$(OBJS_DIR)%.o: $(SRCS_DIR)%.c $(HEADER)
+	@printf "🎛️  $(PURPLE)Compilation of $(YELLOW)$(notdir $<)\r$(RESET)"
+	@$(CC) $(CFLAGS) -c $< -o $@
 
-fclean:		clean
-			@ ${RM} ${NAME}
-			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)binary $(GREEN)✔️"
+# -- Create directory for *.o files -- #
+dir:
+	@mkdir -p $(OBJS_DIR)
 
-re:			fclean all
+# -- Removes objects -- #
+clean :
+	@make -C $(LIBFT_DIR) clean
+	@printf "💥 $(RED)Removing $(NAME)'s objects... $(RESET)💥\n"
+	@$(RM) $(OBJS_DIR)
+	@printf "🗑️  $(CYAN)$(NAME)'s object successfully deleted.$(RESET) 🗑️\n"
 
-.PHONY:		all clean fclean re
+# -- Removes objects (with clean) and executable -- #
+fclean : clean
+	@printf "💥 $(RED)Removing executable(s)... $(RESET)💥\n"
+	@$(RM) $(LIBFT)
+	@$(RM) $(NAME)
+	@printf "🗑️  $(CYAN)Executable(s) and archive(s) successfully deleted.$(RESET) 🗑️\n"
+
+# -- Removes objects and executable then remakes all -- #
+re : fclean all
+
+# -- Avoid file-target name conflicts -- #
+.PHONY: all bonus clean fclean re

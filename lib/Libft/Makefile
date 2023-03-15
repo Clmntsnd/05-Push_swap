@@ -6,7 +6,7 @@
 #    By: loulou <loulou@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 15:11:55 by csenand           #+#    #+#              #
-#    Updated: 2023/03/14 19:32:51 by loulou           ###   ########.fr        #
+#    Updated: 2023/03/14 20:31:03 by loulou           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,39 +85,38 @@ YELLOW	= \033[0;33m
 BLUE	= \033[0;34m
 PURPLE	= \033[0;35m
 CYAN	= \033[0;36m
-CLEAR_LINE = \033[2K
 
-# Executable's creation 
+# -- Executable's creation -- #
 all : dir $(NAME)
 
+# -- Compile library -- #
 $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
 	@echo "✅ $(GREEN)Libft successfully created. ✅     $(RESET)"
 
-# Create all files .o (object) from files .c (source code)
-
+# -- Create all files .o (object) from files .c (source code) -- #
 $(OBJS_DIR)%.o: $(SRCS_DIR)%.c $(HEADER)
 	@printf "🎛️  $(PURPLE)Compilation of $(YELLOW)$(notdir $<)\r$(RESET)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-# Create directory for *.o files
+# -- Create directory for *.o files -- #
 dir:
 	@mkdir -p $(OBJS_DIR)
 
-# Removes objects
+# -- Removes objects -- #
 clean :
 	@printf "💥 $(RED)Removing $(NAME)'s objects... $(RESET)💥\n"
 	@$(RM) $(OBJS_DIR)
-	@printf "🗑️  $(CYAN)$(NAME)'s object successfully deleted.$(RESET) 🗑️\n"
+	@printf "🗑️  $(CYAN)libft's object successfully deleted.$(RESET) 🗑️\n"
 
-# Removes objects (with clean) and executable
+# -- Removes objects (with clean) and executable -- #
 fclean : clean
 	@printf "💥 $(RED)Removing $(NAME)'s executable... $(RESET)💥\n"
 	@$(RM) $(NAME)
 	@printf "🗑️  $(CYAN)Executable(s) and archive(s) successfully deleted.$(RESET) 🗑️\n"
 
-# Removes objects and executable then remakes all
+# -- Removes objects and executable then remakes all -- #
 re : fclean all
 
-# Avoid file-target name conflicts
+# -- Avoid file-target name conflicts -- #
 .PHONY: all bonus clean fclean re
