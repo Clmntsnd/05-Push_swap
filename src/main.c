@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:28:35 by loulou            #+#    #+#             */
-/*   Updated: 2023/03/14 21:31:49 by loulou           ###   ########.fr       */
+/*   Updated: 2023/03/15 17:45:20 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@
 **	 - No int above int_max (2147483647) or below int_min (-2147483648)
 */
 
-t_info	*init_struct(t_info *strct)
+t_node	*init_stack(t_node *stack)
 {
-	strct = malloc(sizeof(t_info));
-	if(!strct)
+	stack = malloc(sizeof(t_node));
+	if(!stack)
 		ft_err("Memory allocation failed");
-	return(strct);
+	return(stack);
 }
 
-// void add_node(int data) //"lst_add_back"
+// void ft_add_node(int data)
 // {
 //     t_node	*new_node;
 	
@@ -38,13 +38,12 @@ t_info	*init_struct(t_info *strct)
 //     new_node->next = NULL;
 // }
 
-void	check_arg(int ac, char **av)
+void	ft_parse_arg(int ac, char **av, t_node **stack_a)
 {
-	// t_stack	*head;
-	// t_stack	*current;
 	int 	i;
 	int		j;
 	long	nb;
+	int 	nbr;
 	
 	i = 1;
 	while (i < ac)
@@ -57,47 +56,41 @@ void	check_arg(int ac, char **av)
 				j++;
 			if (!ft_isdigit(av[i][j]) || nb < INT_MIN || nb > INT_MAX)
 				ft_err("Data isn't valid\n");
-			// add_node(av[i]);
+			// ft_add_node(av[i]);
+			nbr = ft_atoi(&av[i][j]);
+			ft_lstadd_back((t_list **)stack_a, ft_lstnew(&nb));
 		}
 		i++;
 	}
-	// //creation de la premiere node avec le premier arg (i.e. av[1])
-	// head = add_node(ft_atoi(av[1]));
-	// //copy de la head pour ne pas la perdre
-	// current = head;
-	// //creation des autres nodes
-	// i = 0;
-	// while(i < ac)
-	// 	ft_lstadd_back(av[i], current);
-	// //Imprimmer la liste
-	// current = head;
-	// while (current->next)
-	// {
-	// 	printf("%d\n", current->nbr);
-	// 	current = current->next;
-	// }
+}
+
+void print_list(t_node *stack_a)
+{
+    while (stack_a) 
+	{
+        printf("%d ", stack_a->data);
+        stack_a = stack_a->next;
+    }
+    printf("\n");
 }
 
 // int main(int ac, char **av)
-int main()
+int main(int ac, char **av)
 {
-
-	printf("allo");
-	printf("allo");
+	t_node	*stack_a;
 	
-	// t_info	*main_struct;
-	
-	// main_struct = NULL;
-	// if (ac < 2)
-	// 	printf("%sError%s\n", R, RESET);
-	// if (ac >= 2)
-	// {
-	// 	main_struct = init_struct(main_struct);
-	// 	parse_arg(ac, av, main_struct);
-	// 	//TODO add structure and returns it once filled
-	// 	//TODO print the returned stack/pile of nbs
-	// }
-	// else
-	// 	free(main_struct);
-	// return (0);
+	if (ac < 2)
+		printf("%sError%s\n", R, RESET);
+	stack_a = NULL;
+	if (ac >= 2)
+	{
+		stack_a = init_stack(stack_a);
+		ft_parse_arg(ac, av, &stack_a);
+		print_list(stack_a);
+		//TODO add structure and returns it once filled
+		//TODO print the returned stack/pile of nbs
+	}
+	else
+		//TODO create free fts
+	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/08 15:28:23 by loulou            #+#    #+#             */
-/*   Updated: 2023/03/14 18:06:35 by loulou           ###   ########.fr       */
+/*   Created: 2023/03/15 15:56:20 by csenand           #+#    #+#             */
+/*   Updated: 2023/03/15 15:59:25 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,6 @@ typedef struct s_node
 	struct s_node 	*next;
 } t_node;
 
-typedef struct s_info
-{
-	t_node	*a;
-} t_info;
 
 /*
 **	Print Error Message
