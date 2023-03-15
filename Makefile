@@ -6,7 +6,7 @@
 #    By: loulou <loulou@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 15:11:55 by csenand           #+#    #+#              #
-#    Updated: 2023/03/14 21:21:18 by loulou           ###   ########.fr        #
+#    Updated: 2023/03/14 21:27:10 by loulou           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ RM			=	rm -rf
 SRCS_DIR	=	./src/
 SRCS_LST	= 	main.c \
 				utils.c				
+				
 SRCS		=	$(addprefix $(SRCS_DIR), $(SRCS_LST))
 
 # -- OBJ Files -- #

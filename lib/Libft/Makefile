@@ -6,7 +6,7 @@
 #    By: loulou <loulou@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 15:11:55 by csenand           #+#    #+#              #
-#    Updated: 2023/03/14 21:23:57 by loulou           ###   ########.fr        #
+#    Updated: 2023/03/14 21:28:01 by loulou           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,8 @@ SRCS_LST	= 	ft_atof.c \
 				ft_strlcat.c \
 				ft_strdup.c \
 				ft_tolower.c \
-				ft_toupper.c \
+				ft_toupper.c 
+				
 SRCS		=	$(addprefix $(SRCS_DIR), $(SRCS_LST))
 
 # -- OBJ Files -- #
