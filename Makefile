@@ -6,43 +6,49 @@
 #    By: loulou <loulou@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 15:11:55 by csenand           #+#    #+#              #
-#    Updated: 2023/03/14 20:40:58 by loulou           ###   ########.fr        #
+#    Updated: 2023/03/14 21:21:18 by loulou           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+# -- Executable's name -- #
 NAME		=	push_swap
 
+# -- Compilation Flag -- #
 CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror
 
+# -- Remove -- #
 RM			=	rm -rf
 
+# -- SRC Files -- #
 SRCS_DIR	=	./src/
 SRCS_LST	= 	main.c \
-				utils.c
-				
+				utils.c				
 SRCS		=	$(addprefix $(SRCS_DIR), $(SRCS_LST))
 
+# -- OBJ Files -- #
 OBJS_DIR	=	./obj/
 OBJS_LST	=	$(patsubst %.c, %.o, $(SRCS_LST))
 OBJS		=	$(addprefix $(OBJS_DIR), $(OBJS_LST))
 
+# -- HEADER Files -- #
 HEADER_DIR	=	./include/
 HEADER_LST	=	push_swap.h
 HEADER	 	=	$(addprefix $(HEADER_DIR), $(HEADER_LST))
 
+# -- LIBFT Files -- #
 LIBFT_DIR	=	./lib/libft/
 LIBFT		=	$(LIBFT_DIR)libft.a
 LIBFT_H		=	$(LIBFT_DIR)include/libft.h
 
 # -- Colors -- #
-RESET	= \033[0m
-RED		= \033[0;31m
-GREEN	= \033[0;32m
-YELLOW	= \033[0;33m
-BLUE	= \033[0;34m
-PURPLE	= \033[0;35m
-CYAN	= \033[0;36m
+RESET		= 	\033[0m
+RED			= 	\033[0;31m
+GREEN		= 	\033[0;32m
+YELLOW		= 	\033[0;33m
+BLUE		= 	\033[0;34m
+PURPLE		= 	\033[0;35m
+CYAN		= 	\033[0;36m
 
 # -- Executable's creation -- #
 all : dir $(NAME)

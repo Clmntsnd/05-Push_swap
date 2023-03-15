@@ -6,18 +6,22 @@
 #    By: loulou <loulou@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 15:11:55 by csenand           #+#    #+#              #
-#    Updated: 2023/03/14 20:31:03 by loulou           ###   ########.fr        #
+#    Updated: 2023/03/14 21:23:57 by loulou           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+# -- Executable's name -- #
 NAME		=	libft.a
 
+# -- Compilation Flag -- #
 CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror
 
-RM			= rm -rf
-AR			= ar rcs 
+# -- Remove and Archive -- #
+RM			= 	rm -rf
+AR			= 	ar rcs 
 
+# -- SRC Files -- #
 SRCS_DIR	=	./src/
 SRCS_LST	= 	ft_atof.c \
 				ft_atoi.c \
@@ -65,26 +69,26 @@ SRCS_LST	= 	ft_atof.c \
 				ft_strdup.c \
 				ft_tolower.c \
 				ft_toupper.c \
-				
 SRCS		=	$(addprefix $(SRCS_DIR), $(SRCS_LST))
 
+# -- OBJ Files -- #
 OBJS_DIR	=	./obj/
 OBJS_LST	=	$(patsubst %.c, %.o, $(SRCS_LST))
 OBJS		=	$(addprefix $(OBJS_DIR), $(OBJS_LST))
 
+# -- HEADER Files -- #
 HEADER_DIR	=	./include/
 HEADER_LST	=	libft.h
 HEADER	 	=	$(addprefix $(HEADER_DIR), $(HEADER_LST))
 
-
 # -- Colors -- #
-RESET	= \033[0m
-RED		= \033[0;31m
-GREEN	= \033[0;32m
-YELLOW	= \033[0;33m
-BLUE	= \033[0;34m
-PURPLE	= \033[0;35m
-CYAN	= \033[0;36m
+RESET		= 	\033[0m
+RED			= 	\033[0;31m
+GREEN		= 	\033[0;32m
+YELLOW		= 	\033[0;33m
+BLUE		= 	\033[0;34m
+PURPLE		= 	\033[0;35m
+CYAN		= 	\033[0;36m
 
 # -- Executable's creation -- #
 all : dir $(NAME)
