@@ -6,7 +6,7 @@
 /*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 15:28:35 by loulou            #+#    #+#             */
-/*   Updated: 2023/03/14 18:07:53 by loulou           ###   ########.fr       */
+/*   Updated: 2023/03/14 21:31:49 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void	check_arg(int ac, char **av)
 int main()
 {
 
+	printf("allo");
 	printf("allo");
 	
 	// t_info	*main_struct;
