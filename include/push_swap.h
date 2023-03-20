@@ -6,7 +6,7 @@
 /*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 15:56:20 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/15 15:59:25 by csenand          ###   ########.fr       */
+/*   Updated: 2023/03/20 16:04:59 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,13 @@ typedef struct s_node
 	struct s_node 	*next;
 } t_node;
 
-
 /*
 **	Print Error Message
 */
 void	ft_err(const char *msg);
+
+/*
+**	Node related fonctions
+*/
+void	ft_ps_addback(t_node **stack, t_node *new);
+t_node	*ft_ps_new_node(int content);

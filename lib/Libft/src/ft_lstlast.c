@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 15:36:11 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/14 17:23:33 by loulou           ###   ########.fr       */
+/*   Updated: 2023/03/20 11:52:51 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,4 @@ t_list	*ft_lstlast(t_list *lst)
 		ptr_lst = ptr_lst -> next;
 	return (ptr_lst);
 }
+ 
