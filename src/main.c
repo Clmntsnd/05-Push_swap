@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/08 15:28:35 by loulou            #+#    #+#             */
-/*   Updated: 2023/03/20 16:02:34 by csenand          ###   ########.fr       */
+/*   Created: 2023/03/20 16:26:03 by csenand           #+#    #+#             */
+/*   Updated: 2023/03/20 16:37:22 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #include "../include/push_swap.h"
 
@@ -48,8 +50,10 @@ void	ft_parse_arg(int ac, char **av)
 			if (!ft_isdigit(av[i][j]) || nb < INT_MIN || nb > INT_MAX)
 				ft_err("Data isn't valid\n");
 		}
+		//TODO check for Duplicates
 		ft_ps_addback(&stack_a, ft_ps_new_node((int)nb));
-		printf("nbr : %ld\n", nb);
+		//TODO to remove
+		printf("nbr : %ld\n", nb); 
 		i++;
 	}
 		print_list(stack_a);
@@ -68,4 +72,6 @@ int main(int ac, char **av)
 	else
 		//TODO create free fts
 	return (0);
+
+	//TODO check final de tous les headers (loulou vs csenand)
 }
