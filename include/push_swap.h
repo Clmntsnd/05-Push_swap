@@ -6,7 +6,7 @@
 /*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 15:56:20 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/20 16:04:59 by csenand          ###   ########.fr       */
+/*   Updated: 2023/03/22 15:20:43 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@
 typedef struct s_node 
 {
 	int 			data;
+	int				s_index;
 	struct s_node 	*next;
+	struct s_node 	*previous;
 } t_node;
 
 /*
@@ -35,3 +37,11 @@ void	ft_err(const char *msg);
 */
 void	ft_ps_addback(t_node **stack, t_node *new);
 t_node	*ft_ps_new_node(int content);
+void	ft_check_duplicates(t_node *stack);
+// int 	ft_check_duplicates(t_node *stack);
+
+/*
+**	Clear list
+*/
+void	ft_ps_lstdelone(t_node *lst);
+void	ft_ps_lstclear(t_node **lst);
