@@ -6,7 +6,7 @@
 /*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:26:10 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/22 15:42:12 by csenand          ###   ########.fr       */
+/*   Updated: 2023/03/23 12:08:04 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,24 +44,41 @@ t_node	*ft_ps_new_node(int data)
 	return (new_node);
 }
 
-void	ft_ps_lstdelone(t_node *lst)
+void	ft_ps_lstdelone(t_node *stack)
 {
-	if (!lst)
+	if (!stack)
 		return ;
-	free(lst);
+	free(stack);
 }
 
-void	ft_ps_lstclear(t_node **lst)
+void	ft_ps_lstclear(t_node **stack)
 {
 	t_node	*tmp;
 
-	if (!lst)
+	if (!stack)
 		return ;
-	while (*lst)
+	while (*stack)
 	{
-		tmp = (*lst)->next;
-		ft_ps_lstdelone(*lst);
-		*lst = tmp;
+		tmp = (*stack)->next;
+		ft_ps_lstdelone(*stack);
+		*stack = tmp;
 	}
-	*lst = NULL;
+	*stack = NULL;
+}
+
+int	ft_lstsize(t_node *stack)
+{
+	int		i;
+	t_node	*ptr_stack;
+
+	if (!stack)
+		return (0);
+	i = 0;
+	ptr_stack = stack;
+	while (ptr_stack)
+	{
+		i++;
+		ptr_stack = ptr_stack -> next;
+	}
+	return (i);
 }
