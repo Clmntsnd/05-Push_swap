@@ -6,7 +6,7 @@
 /*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:26:03 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/27 14:25:30 by loulou           ###   ########.fr       */
+/*   Updated: 2023/03/27 14:28:05 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,6 @@ int	main(int ac, char **av)
 	t_node	*stack_a;
 	
 	stack_a = NULL;
-	if (ac < 2)
-		printf("%sError%s\n", R, RESET);
 	if (ac > 1)
 	{
 		stack_a = ft_parse_arg(ac, av);
