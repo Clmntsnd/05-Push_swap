@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
+/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:26:03 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/23 14:21:33 by csenand          ###   ########.fr       */
+/*   Updated: 2023/03/27 14:25:30 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,31 +56,31 @@ t_node	*ft_parse_arg(int ac, char **av)
 				ft_err("Data isn't valid\n", stack_a);
 		}
 		ft_ps_addback(&stack_a, ft_ps_new_node((int)nb));
-		// stack_a->s_index++;
-		// if (stack_a->s_index > 1)
-		//TODO printf to remove
-		// printf("nbr : %ld\n", nb);
+		stack_a->s_size++;
 		i++;
 	}
 	ft_check_duplicates(stack_a);
-	print_list(stack_a);
+	// print_list(stack_a);
 	return(stack_a);
 }
 
 int	main(int ac, char **av)
 {
 	t_node	*stack_a;
+	
+	stack_a = NULL;
 	if (ac < 2)
 		printf("%sError%s\n", R, RESET);
 	if (ac > 1)
 	{
 		stack_a = ft_parse_arg(ac, av);
-		//TODO create fct index to index the total length
+		ft_assign_index(stack_a, stack_a->s_size);
+		ft_sort_algo(stack_a);
 		//TODO add other fct here after the parsing is validated
 		
 	}
 	ft_ps_lstclear(&stack_a);
 	return (0);
-	//TODO mettre des 'static' an de but de fonction (lorsque qu'elles sont utilisee seulement dans le fichier actuel)
+	//TODO mettre des 'static' en debut de fonction (lorsque qu'elles sont utilisee seulement dans le fichier actuel)
 	//TODO check final de tous les headers (loulou vs csenand)
 }

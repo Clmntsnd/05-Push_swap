@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   node_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
+/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:26:10 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/23 12:08:04 by csenand          ###   ########.fr       */
+/*   Updated: 2023/03/27 14:08:21 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ft_ps_lstclear(t_node **stack)
 	*stack = NULL;
 }
 
-int	ft_lstsize(t_node *stack)
+int	ft_ps_lstsize(t_node *stack)
 {
 	int		i;
 	t_node	*ptr_stack;

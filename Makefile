@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: csenand <csenand@student.42.fr>            +#+  +:+       +#+         #
+#    By: loulou <loulou@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 15:11:55 by csenand           #+#    #+#              #
-#    Updated: 2023/03/20 14:23:36 by csenand          ###   ########.fr        #
+#    Updated: 2023/03/27 14:10:00 by loulou           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,11 @@ RM			=	rm -rf
 # -- SRC Files -- #
 SRCS_DIR	=	./src/
 SRCS_LST	= 	main.c \
-				utils.c	\
-				node_utils.c
+				algo.c \
+				index.c \
+				moves.c \
+				node_utils.c \
+				utils.c	
 				
 SRCS		=	$(addprefix $(SRCS_DIR), $(SRCS_LST))
 

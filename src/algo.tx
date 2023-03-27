@@ -1,3 +1,0 @@
-Every chunk processing is as follows: 
-if the number belongs to the chunk (between start and end), then push it to stack b.
-
