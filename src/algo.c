@@ -17,29 +17,29 @@ int	ft_check_sorted(t_node *stack)
 	return (1);
 }
 
-void	ft_algo_3(t_node *stack, t_move *move)
+void	ft_algo_3(t_stack *stack, t_move *move)
 {
 	int	max;
 
-	max = ft_ps_index_max(stack);
-	if (stack->s_index == max)
-		ft_ps_rot(&stack, move->rotate_a);
-	if (stack->next->s_index == max)
-		ft_ps_rev_rot(&stack, move->reverse_a);
-	if (stack->next->next->s_index == max
-		&& stack->s_index > stack->next->s_index)
-		ft_ps_swap(&stack, move->swap_a);
+	max = ft_ps_index_max(stack->a);
+	if (stack->a->index == max)
+		ft_ps_rot(&stack->a, move->rotate_a);
+	if (stack->a->next->index == max)
+		ft_ps_rev_rot(&stack->a, move->reverse_a);
+	if (stack->a->next->next->index == max
+		&& stack->a->index > stack->a->next->index)
+		ft_ps_swap(&stack->a, move->swap_a);
 }
 
-void	ft_sort_algo(t_node *stack)
+void	ft_sort_algo(t_stack *m_stack)
 {
 	t_move	*move;
 
 	move = ft_print_moves();
-	if (ft_check_sorted(stack) == 1)
+	if (ft_check_sorted(m_stack->a) == 1)
 		exit(EXIT_SUCCESS);
-	if (stack->s_size == 2)
-		ft_ps_swap(&stack, move->swap_a);
-	else if (stack->s_size == 3)
-		ft_algo_3(stack, move);
+	if (m_stack->m_size == 2)
+		ft_ps_swap(&m_stack->a, move->swap_a);
+	else if (m_stack->m_size == 3)
+		ft_algo_3(m_stack, move);
 }

@@ -6,7 +6,7 @@
 /*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:26:03 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/27 14:28:05 by loulou           ###   ########.fr       */
+/*   Updated: 2023/03/28 14:00:38 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,24 +26,29 @@
 **
 */
 
-void	print_list(t_node *stack_a)
+void	print_list(t_node *stack)
 {
-	while (stack_a)
+	while (stack)
 	{
-		printf("%d ", stack_a->data);
-		stack_a = stack_a->next;
+		printf("%d ", stack->data);
+		stack = stack->next;
 	}
 	printf("\n");
 }
 
-t_node	*ft_parse_arg(int ac, char **av)
+void	ft_m_stack_init(t_stack *m_stack)
 {
-	t_node	*stack_a;
+	m_stack->m_size = 0;
+}
+
+int	ft_parse_arg(int ac, char **av, t_stack *m_stack)
+{
 	int		i;
 	int		j;
 	long	nb;
 
 	i = 1;
+	ft_m_stack_init(m_stack);
 	while (i < ac)
 	{
 		j = -1;
@@ -53,31 +58,40 @@ t_node	*ft_parse_arg(int ac, char **av)
 			if ((av[i][j] == '-' || av[i][j] == '+') && av[i][j] != '\0')
 				j++;
 			if (!ft_isdigit(av[i][j]) || nb < INT_MIN || nb > INT_MAX)
-				ft_err("Data isn't valid\n", stack_a);
+				ft_err("Data isn't valid\n");
 		}
-		ft_ps_addback(&stack_a, ft_ps_new_node((int)nb));
-		stack_a->s_size++;
+		printf("\nParsing ok\n");
+		ft_ps_addback(&m_stack->a, ft_ps_new_node((int)nb));
+		m_stack->m_size++;
 		i++;
 	}
-	ft_check_duplicates(stack_a);
-	// print_list(stack_a);
-	return(stack_a);
+	ft_check_duplicates(m_stack->a);
+	return(1);
 }
 
 int	main(int ac, char **av)
 {
-	t_node	*stack_a;
+	t_stack	*m_stack;
 	
-	stack_a = NULL;
 	if (ac > 1)
 	{
-		stack_a = ft_parse_arg(ac, av);
-		ft_assign_index(stack_a, stack_a->s_size);
-		ft_sort_algo(stack_a);
+		printf("Parsing start ...\n\n");
+		m_stack = (t_stack *)malloc(sizeof(t_stack));
+		if (!m_stack)
+			return (1);
+		if (ft_parse_arg(ac, av, m_stack) != 0)
+		{
+			printf("Parsing valid\n\n");
+			printf("Stack_a's data : \n");
+			print_list(m_stack->a);
+			ft_assign_index(m_stack->a, m_stack->m_size);
+			ft_sort_algo(m_stack);
+		}
+		
 		//TODO add other fct here after the parsing is validated
 		
 	}
-	ft_ps_lstclear(&stack_a);
+	// ft_ps_lstclear(&main_stack);
 	return (0);
 	//TODO mettre des 'static' en debut de fonction (lorsque qu'elles sont utilisee seulement dans le fichier actuel)
 	//TODO check final de tous les headers (loulou vs csenand)

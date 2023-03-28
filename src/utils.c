@@ -6,16 +6,14 @@
 /*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 14:31:00 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/27 11:06:33 by loulou           ###   ########.fr       */
+/*   Updated: 2023/03/28 10:24:47 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void ft_err(const char *msg, t_node *stack)
+void ft_err(const char *msg)
 {
-    (void)stack;
-	// ft_ps_lstclear(&stack);
     printf("%sError%s: %s\n", R, RESET, msg);
 	exit(1);
 }
@@ -34,7 +32,7 @@ void	ft_check_duplicates(t_node *stack)
             if (current->data == runner->data)
             {
                 // ft_ps_lstclear(&stack);
-                ft_err("Duplicate data\n", stack);
+                ft_err("Duplicate data\n");
             }
             runner = runner->next;
         }

@@ -14,17 +14,17 @@ void	ft_assign_index(t_node *stack, int size)
 	temp = stack;
 	while (size > 0)
 	{
-		i = INT_MIN;
+		i = 0;
 		while (temp != NULL)
 		{
-			if ((i <= temp->data) && temp->s_index == -1)
+			if ((i <= temp->data) && temp->index == -1)
 			{
 				i = temp->data;
 				max = temp;
 			}
 			temp = temp->next;
 		}
-		max->s_index = size;
+		max->index = size;
 		temp = stack;
 		size--;
 	}
@@ -39,8 +39,8 @@ int	ft_ps_index_max(t_node *stack)
 	temp = stack;
 	while(temp)
 	{
-		if(temp->s_index > max)
-			max = temp->s_index;
+		if(temp->index > max)
+			max = temp->index;
 		temp = temp->next;
 	}
 	return(max);
@@ -55,8 +55,8 @@ int	ft_ps_index_min(t_node *stack)
 	temp = stack;
 	while (temp)
 	{
-		if (temp->s_index < min)
-			min = temp->s_index;
+		if (temp->index < min)
+			min = temp->index;
 		temp = temp->next;
 	}
 	return (min);

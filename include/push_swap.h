@@ -6,7 +6,7 @@
 /*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 15:56:20 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/27 14:13:35 by loulou           ###   ########.fr       */
+/*   Updated: 2023/03/28 14:10:13 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,10 @@
 typedef struct s_node 
 {
 	int 			data;
-	int				s_size;
-	int				s_index;
+	int				index;
 	struct s_node 	*next;
 	struct s_node 	*previous;
-} t_node;
+} 					t_node;
 
 typedef struct s_move
 {
@@ -43,17 +42,25 @@ typedef struct s_move
 	char			*reverse_b;
 }					t_move;
 
+typedef struct s_stack
+{
+	t_node			*a;
+	t_node			*b;
+	int				m_size; //total size of inputed numbers
+}					t_stack;
+
+
 /*
 **	Print message
 */
-// void	ft_err(const char *msg);
-void	ft_err(const char *msg, t_node *stack);
+void	ft_err(const char *msg);
+// void	ft_err(const char *msg, t_node *stack);
 t_move	*ft_print_moves(void);
 
 /*
 **	Node related functions
 */
-void	ft_ps_addback(t_node **stack, t_node *new);
+void	ft_ps_addback(t_node **stack, t_node *data_in);
 t_node	*ft_ps_new_node(int content);
 void	ft_check_duplicates(t_node *stack);
 // int 	ft_check_duplicates(t_node *stack);
@@ -75,7 +82,7 @@ void	ft_ps_lstclear(t_node **lst);
 /*
 **	Algo related functions
 */
-void	ft_sort_algo(t_node *stack);
+void	ft_sort_algo(t_stack *m_stack);
 void	ft_assign_index(t_node *stack, int size);
 int		ft_ps_index_max(t_node *stack);
 int		ft_ps_index_min(t_node *stack);
