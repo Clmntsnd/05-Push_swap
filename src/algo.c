@@ -42,4 +42,5 @@ void	ft_sort_algo(t_stack *m_stack)
 		ft_ps_swap(&m_stack->a, move->swap_a);
 	else if (m_stack->m_size == 3)
 		ft_algo_3(m_stack, move);
+	free(move);
 }

@@ -6,7 +6,7 @@
 /*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 15:56:20 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/28 14:10:13 by loulou           ###   ########.fr       */
+/*   Updated: 2023/03/28 22:25:27 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,10 @@ void	ft_ps_rot(t_node **stack, char *move);
 void	ft_ps_rev_rot(t_node **stack, char *move);
 
 /*
-**	Clear list
+**	Free functions
 */
-void	ft_ps_lstdelone(t_node *lst);
-void	ft_ps_lstclear(t_node **lst);
+void	ft_free_m_stack(t_stack **stack);
+void	ft_free_stack(t_node **stack);
 
 /*
 **	Algo related functions

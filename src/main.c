@@ -6,7 +6,7 @@
 /*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:26:03 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/28 14:00:38 by loulou           ###   ########.fr       */
+/*   Updated: 2023/03/28 22:27:19 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,12 +86,10 @@ int	main(int ac, char **av)
 			print_list(m_stack->a);
 			ft_assign_index(m_stack->a, m_stack->m_size);
 			ft_sort_algo(m_stack);
-		}
-		
-		//TODO add other fct here after the parsing is validated
-		
+			ft_free_stack(&m_stack->a);
+			ft_free_m_stack(&m_stack);
+		}		
 	}
-	// ft_ps_lstclear(&main_stack);
 	return (0);
 	//TODO mettre des 'static' en debut de fonction (lorsque qu'elles sont utilisee seulement dans le fichier actuel)
 	//TODO check final de tous les headers (loulou vs csenand)

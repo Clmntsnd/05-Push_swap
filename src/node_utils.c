@@ -6,7 +6,7 @@
 /*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:26:10 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/28 13:53:57 by loulou           ###   ########.fr       */
+/*   Updated: 2023/03/28 22:25:46 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,41 +53,25 @@ t_node	*ft_ps_new_node(int data)
 	return (new_node);
 }
 
-void	ft_ps_lstdelone(t_node *stack)
-{
-	if (!stack)
-		return ;
-	free(stack);
-}
-
-void	ft_ps_lstclear(t_node **stack)
+void	ft_free_stack(t_node **stack)
 {
 	t_node	*tmp;
 
-	if (!stack)
+	if (!stack || !(*stack))
 		return ;
 	while (*stack)
 	{
 		tmp = (*stack)->next;
-		ft_ps_lstdelone(*stack);
+		free(*stack);
 		*stack = tmp;
 	}
 	*stack = NULL;
 }
 
-int	ft_ps_lstsize(t_node *stack)
+void	ft_free_m_stack(t_stack **stack)
 {
-	int		i;
-	t_node	*temp;
-
-	if (!stack)
-		return (0);
-	i = 0;
-	temp = stack;
-	while (temp)
-	{
-		i++;
-		temp = temp->next;
-	}
-	return (i);
+	if (!stack || !*stack)
+		return ;
+	free(*stack);
+	*stack = NULL;
 }
