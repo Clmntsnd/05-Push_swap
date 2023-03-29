@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/27 14:31:00 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/28 10:24:47 by loulou           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
@@ -18,7 +7,7 @@ void ft_err(const char *msg)
 	exit(1);
 }
 
-void	ft_check_duplicates(t_node *stack)
+void	ft_check_duplicates(t_stack *m_stack, t_node *stack)
 {
     t_node *current;
     t_node *runner;
@@ -31,7 +20,8 @@ void	ft_check_duplicates(t_node *stack)
 		{
             if (current->data == runner->data)
             {
-                // ft_ps_lstclear(&stack);
+                ft_free_stack(&stack);
+				ft_free_m_stack(&m_stack);
                 ft_err("Duplicate data\n");
             }
             runner = runner->next;
@@ -44,7 +34,7 @@ t_move	*ft_print_moves(void)
 {
 	t_move	*moves;
 
-	moves = malloc(sizeof(moves));
+	moves = malloc(sizeof(t_move));
 	if (!moves)
 		return (NULL);
 	moves->push_a = "pa";
