@@ -1,6 +1,14 @@
-
-//TODO put 42 header here
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   index.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/30 17:34:04 by csenand           #+#    #+#             */
+/*   Updated: 2023/03/30 17:48:58 by csenand          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
@@ -39,9 +47,9 @@ int	ft_ps_index_max(t_node *stack)
 	temp = stack;
 	max = INT_MIN;
 	max_bits = 0;
-	while(temp)
+	while (temp)
 	{
-		if(temp->index > max)
+		if (temp->index > max)
 			max = temp->index;
 		temp = temp->next;
 	}
@@ -50,11 +58,11 @@ int	ft_ps_index_max(t_node *stack)
 	return (max_bits);
 }
 
-void 	ft_radix(t_stack *m_stack, t_move *move)
+void	ft_radix(t_stack *m_stack, t_move *move)
 {
 	t_node	*temp;
-	int 	i;
-	int 	j;
+	int		i;
+	int		j;
 	int		max;
 	int		size;
 
@@ -65,15 +73,15 @@ void 	ft_radix(t_stack *m_stack, t_move *move)
 	while (i < max)
 	{
 		j = 0;
-		while(j++ < size)
+		while (j++ < size)
 		{
 			temp = m_stack->a;
-			if(((temp->index >> i) & 1) == 1)
+			if (((temp->index >> i) & 1) == 1)
 				ft_ps_rot(&m_stack->a, move->rotate_a);
 			else
 				ft_ps_push(&m_stack->a, &m_stack->b, move->push_b);
 		}
-		while(ft_ps_stack_size(m_stack->b) != 0)
+		while (ft_ps_stack_size(m_stack->b) != 0)
 			ft_ps_push(&m_stack->b, &m_stack->a, move->push_a);
 		i++;
 	}

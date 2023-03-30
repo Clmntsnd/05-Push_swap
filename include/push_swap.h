@@ -1,4 +1,17 @@
-//TODO put 42 header here
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/30 17:48:23 by csenand           #+#    #+#             */
+/*   Updated: 2023/03/30 18:00:49 by csenand          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -9,13 +22,13 @@
 # define R		"\033[1;31m"
 # define RESET	"\033[1;0m"
 
-typedef struct s_node 
+typedef struct s_node
 {
-	int 			data;
+	int				data;
 	int				index;
-	struct s_node 	*next;
-	struct s_node 	*previous;
-} 					t_node;
+	struct s_node	*next;
+	struct s_node	*previous;
+}					t_node;
 
 typedef struct s_move
 {
@@ -36,8 +49,13 @@ typedef struct s_stack
 {
 	t_node			*a;
 	t_node			*b;
-	int				m_size; //total size (i.e. qty) of inputed numbers
+	int				m_size;
 }					t_stack;
+
+/*
+**	Parsing
+*/
+int		ft_parse_arg(int ac, char **av, t_stack *m_stack);
 
 /*
 **	Print message
@@ -56,6 +74,7 @@ int		ft_ps_stack_size(t_node *stack);
 /*
 **	Move related functions
 */
+void	ft_m_stack_init(t_stack *m_stack);
 void	ft_ps_push(t_node **from, t_node **to, char *move);
 void	ft_ps_swap(t_node **stack, char *move);
 void	ft_ps_rot(t_node **stack, char *move);
@@ -73,6 +92,6 @@ void	ft_free_stack(t_node **stack);
 void	ft_sort_algo(t_stack *m_stack);
 void	ft_assign_index(t_node *stack, int size);
 int		ft_ps_index_max(t_node *stack);
-int		ft_ps_index_min(t_node *stack);
-void 	ft_radix(t_stack *m_stack, t_move *move);
+void	ft_radix(t_stack *m_stack, t_move *move);
 
+#endif

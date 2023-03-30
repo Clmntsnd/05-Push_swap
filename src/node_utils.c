@@ -1,4 +1,14 @@
-//TODO put 42 header here
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   node_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/30 17:35:03 by csenand           #+#    #+#             */
+/*   Updated: 2023/03/30 17:51:46 by csenand          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
@@ -17,37 +27,34 @@ void	ft_ps_addback(t_node **stack, t_node *data_in)
 	while (add_last->next != NULL)
 		add_last = add_last->next;
 	add_last->next = data_in;
-	// new->previous = add_last;
 }
 
 t_node	*ft_ps_new_node(int data)
 {
 	t_node	*new_node;
-	
+
 	new_node = malloc(sizeof(t_node));
 	if (!new_node)
 		return (NULL);
 	new_node->data = data;
-	new_node->index = -1; 
-	//TODO why index = -1 ??
+	new_node->index = -1;
 	new_node->next = NULL;
-	// new_node->previous = NULL;
 	return (new_node);
 }
 
 int	ft_ps_stack_size(t_node *stack)
 {
 	int		i;
-	t_node	*ptr_stack;
+	t_node	*temp;
 
 	if (stack == NULL)
 		return (0);
 	i = 0;
-	ptr_stack = stack;
-	while (ptr_stack)
+	temp = stack;
+	while (temp)
 	{
 		i++;
-		ptr_stack = ptr_stack -> next;
+		temp = temp->next;
 	}
 	return (i);
 }
