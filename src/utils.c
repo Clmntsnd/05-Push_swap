@@ -2,8 +2,10 @@
 
 #include "../include/push_swap.h"
 
-void ft_err(const char *msg)
+void ft_err(const char *msg, t_stack *m_stack)
 {
+	ft_free_stack(&m_stack->a);
+	ft_free_m_stack(&m_stack);
     printf("%sError%s: %s\n", R, RESET, msg);
 	exit(1);
 }
@@ -21,9 +23,9 @@ void	ft_check_duplicates(t_stack *m_stack, t_node *stack)
 		{
             if (current->data == runner->data)
             {
-                ft_free_stack(&stack);
-				ft_free_m_stack(&m_stack);
-                ft_err("Duplicate data\n");
+                // ft_free_stack(&stack);
+				// ft_free_m_stack(&m_stack);
+                ft_err("Duplicate data\n", m_stack);
             }
             runner = runner->next;
         }

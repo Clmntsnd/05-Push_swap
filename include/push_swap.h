@@ -42,7 +42,7 @@ typedef struct s_stack
 /*
 **	Print message
 */
-void	ft_err(const char *msg);
+void	ft_err(const char *msg, t_stack *m_stack);
 t_move	*ft_print_moves(void);
 
 /*
@@ -51,6 +51,7 @@ t_move	*ft_print_moves(void);
 void	ft_ps_addback(t_node **stack, t_node *data_in);
 t_node	*ft_ps_new_node(int content);
 void	ft_check_duplicates(t_stack *m_stack, t_node *stack);
+int		ft_ps_stack_size(t_node *stack);
 
 /*
 **	Move related functions
@@ -73,4 +74,5 @@ void	ft_sort_algo(t_stack *m_stack);
 void	ft_assign_index(t_node *stack, int size);
 int		ft_ps_index_max(t_node *stack);
 int		ft_ps_index_min(t_node *stack);
+void 	ft_radix(t_stack *m_stack, t_move *move);
 

@@ -44,9 +44,9 @@ int	ft_parse_arg(int ac, char **av, t_stack *m_stack)
 				j++;
 			if (!ft_isdigit(av[i][j]) || nb < INT_MIN || nb > INT_MAX)
 			{
-				ft_free_stack(&m_stack->a);
-				ft_free_m_stack(&m_stack);
-				ft_err("Data isn't valid\n");
+				// ft_free_stack(&m_stack->a);
+				// ft_free_m_stack(&m_stack);
+				ft_err("Data isn't valid\n", m_stack);
 			}
 		}
 		ft_ps_addback(&m_stack->a, ft_ps_new_node((int)nb));

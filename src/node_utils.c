@@ -35,6 +35,23 @@ t_node	*ft_ps_new_node(int data)
 	return (new_node);
 }
 
+int	ft_ps_stack_size(t_node *stack)
+{
+	int		i;
+	t_node	*ptr_stack;
+
+	if (stack == NULL)
+		return (0);
+	i = 0;
+	ptr_stack = stack;
+	while (ptr_stack)
+	{
+		i++;
+		ptr_stack = ptr_stack -> next;
+	}
+	return (i);
+}
+
 void	ft_free_stack(t_node **stack)
 {
 	t_node	*tmp;

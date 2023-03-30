@@ -1,4 +1,4 @@
-//TODO put 42 header here
+#//TODO put 42 header here
 
 # -- Executable's name -- #
 NAME		=	push_swap
