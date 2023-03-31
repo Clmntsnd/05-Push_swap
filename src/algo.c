@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:34:39 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/31 13:30:44 by loulou           ###   ########.fr       */
+/*   Updated: 2023/03/31 14:14:29 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,14 @@ void	ft_algo_3(t_stack *stack, t_move *move)
 
 void	ft_algo_5(t_stack *stack, t_move *move)
 {
-	// Push the two smallest numbers to stack b
-	while (ft_ps_stack_size(stack->b) < 2)
+	while (ft_ps_stack_size(stack->a) > 3)
 	{
 		if (stack->a->index == ft_ps_min_value(stack->a))
 			ft_ps_push(&stack->a, &stack->b, move->push_b);
 		else
 			ft_ps_rot(&stack->a, move->rotate_a);
 	}
-
-	// Sort the remaining three numbers on stack a
 	ft_algo_3(stack, move);
-
-	// Push the two smallest numbers from stack b back to stack a
 	while (ft_ps_stack_size(stack->b) > 0)
 	{
 		if (stack->b->index == ft_ps_max_value(stack->b))
@@ -64,8 +59,6 @@ void	ft_algo_5(t_stack *stack, t_move *move)
 			ft_ps_rot(&stack->b, move->rotate_b);
 	}
 }
-
-
 
 void	ft_sort_algo(t_stack *m_stack)
 {
@@ -78,7 +71,7 @@ void	ft_sort_algo(t_stack *m_stack)
 		ft_ps_swap(&m_stack->a, move->swap_a);
 	else if (m_stack->m_size == 3)
 		ft_algo_3(m_stack, move);
-	else if (m_stack->m_size <= 5)
+	else if (m_stack->m_size > 3 && m_stack->m_size < 5)
 		ft_algo_5(m_stack, move);
 	else
 		ft_radix(m_stack, move);
