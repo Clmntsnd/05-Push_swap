@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
+/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:48:23 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/30 18:00:49 by csenand          ###   ########.fr       */
+/*   Updated: 2023/03/30 20:53:40 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,9 @@ void	ft_free_stack(t_node **stack);
 */
 void	ft_sort_algo(t_stack *m_stack);
 void	ft_assign_index(t_node *stack, int size);
-int		ft_ps_index_max(t_node *stack);
+int		ft_ps_max_digits(t_node *stack);
+int		ft_ps_min_value(t_node *stack);
+int		ft_ps_max_value(t_node *stack);
 void	ft_radix(t_stack *m_stack, t_move *move);
 
 #endif

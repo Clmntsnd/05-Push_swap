@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
+/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:34:04 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/30 17:48:58 by csenand          ###   ########.fr       */
+/*   Updated: 2023/03/30 20:56:39 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,24 +38,48 @@ void	ft_assign_index(t_node *stack, int size)
 	}
 }
 
-int	ft_ps_index_max(t_node *stack)
+int	ft_ps_max_value(t_node *stack)
 {
 	int		max;
 	t_node	*temp;
-	int		max_bits;
 
 	temp = stack;
 	max = INT_MIN;
-	max_bits = 0;
 	while (temp)
 	{
 		if (temp->index > max)
 			max = temp->index;
 		temp = temp->next;
 	}
+	return (max);
+}
+
+int	ft_ps_max_digits(t_node *stack)
+{
+	int max;
+	int max_bits;
+
+	max_bits = 0;
+	max = ft_ps_max_value(stack);
 	while ((max >> max_bits) != 0)
 		max_bits++;
 	return (max_bits);
+}
+
+int	ft_ps_min_value(t_node *stack)
+{
+	int		min;
+	t_node	*temp;
+
+	temp = stack;
+	min = INT_MAX;
+	while (temp)
+	{
+		if (temp->index < min)
+			min = temp->index;
+		temp = temp->next;
+	}
+	return (min);
 }
 
 void	ft_radix(t_stack *m_stack, t_move *move)
@@ -68,7 +92,7 @@ void	ft_radix(t_stack *m_stack, t_move *move)
 
 	temp = m_stack->a;
 	size = ft_ps_stack_size(m_stack->a);
-	max = ft_ps_index_max(m_stack->a);
+	max = ft_ps_max_digits(m_stack->a);
 	i = 0;
 	while (i < max)
 	{
