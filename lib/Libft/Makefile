@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: loulou <loulou@student.42.fr>              +#+  +:+       +#+         #
+#    By: csenand <csenand@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 15:11:55 by csenand           #+#    #+#              #
-#    Updated: 2023/03/14 21:28:01 by loulou           ###   ########.fr        #
+#    Updated: 2023/03/31 11:34:59 by csenand          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,6 +90,8 @@ YELLOW		= 	\033[0;33m
 BLUE		= 	\033[0;34m
 PURPLE		= 	\033[0;35m
 CYAN		= 	\033[0;36m
+ERASE_LINE 	= 	\033[2K\r
+
 
 # -- Executable's creation -- #
 all : dir $(NAME)
@@ -97,11 +99,11 @@ all : dir $(NAME)
 # -- Compile library -- #
 $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
-	@echo "✅ $(GREEN)Libft successfully created. ✅     $(RESET)"
+	@echo "$(ERASE_LINE)✅ $(GREEN)Libft successfully created. ✅     $(RESET)"
 
 # -- Create all files .o (object) from files .c (source code) -- #
 $(OBJS_DIR)%.o: $(SRCS_DIR)%.c $(HEADER)
-	@printf "🎛️  $(PURPLE)Compilation of $(YELLOW)$(notdir $<)\r$(RESET)"
+	@printf "$(ERASE_LINE)🎛️  $(PURPLE)Compilation of$(YELLOW) $(notdir $<)$(RESET)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 # -- Create directory for *.o files -- #

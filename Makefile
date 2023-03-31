@@ -44,6 +44,7 @@ YELLOW		= 	\033[0;33m
 BLUE		= 	\033[0;34m
 PURPLE		= 	\033[0;35m
 CYAN		= 	\033[0;36m
+ERASE_LINE 	= 	\033[2K\r
 
 # -- Executable's creation -- #
 all : dir $(NAME)
@@ -56,7 +57,7 @@ $(NAME): $(OBJS)
 
 # -- Create all files .o (object) from files .c (source code) -- #
 $(OBJS_DIR)%.o: $(SRCS_DIR)%.c $(HEADER)
-	@printf "🎛️  $(PURPLE)Compilation of $(YELLOW)$(notdir $<)\r$(RESET)"
+	@printf "$(ERASE_LINE)🎛️  $(PURPLE)Compilation of $(YELLOW)$(notdir $<)\r$(RESET)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 # -- Create directory for *.o files -- #

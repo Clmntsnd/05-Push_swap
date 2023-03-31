@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:34:04 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/30 20:56:39 by loulou           ###   ########.fr       */
+/*   Updated: 2023/03/31 12:41:23 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ int	ft_ps_min_value(t_node *stack)
 	min = INT_MAX;
 	while (temp)
 	{
-		if (temp->index < min)
-			min = temp->index;
+		if (temp->data < min)
+			min = temp->data;
 		temp = temp->next;
 	}
 	return (min);
