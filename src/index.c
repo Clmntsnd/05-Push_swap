@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:34:04 by csenand           #+#    #+#             */
-/*   Updated: 2023/04/03 12:13:35 by loulou           ###   ########.fr       */
+/*   Updated: 2023/04/03 17:03:33 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_assign_index(t_node *stack, int size)
 	temp = stack;
 	while (size > 0)
 	{
-		i = 0;
+		i = INT_MIN;
 		while (temp != NULL)
 		{
 			if ((i <= temp->data) && temp->index == -1)
@@ -62,8 +62,8 @@ int	ft_ps_max_value(t_node *stack)
 /*	Find the max digits of the naax value inside the stack	*/
 int	ft_ps_max_digits(t_node *stack)
 {
-	int max;
-	int max_bits;
+	int	max;
+	int	max_bits;
 
 	max_bits = 0;
 	max = ft_ps_max_value(stack);
@@ -82,8 +82,8 @@ int	ft_ps_min_value(t_node *stack)
 	min = INT_MAX;
 	while (temp)
 	{
-		if (temp->data < min)
-			min = temp->data;
+		if (temp->index < min)
+			min = temp->index;
 		temp = temp->next;
 	}
 	return (min);

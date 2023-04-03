@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:34:39 by csenand           #+#    #+#             */
-/*   Updated: 2023/04/03 13:28:10 by loulou           ###   ########.fr       */
+/*   Updated: 2023/04/03 17:11:55 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,14 +68,14 @@ void	ft_sort_algo(t_stack *m_stack)
 {
 	t_move	*move;
 
-	move = ft_print_moves();
 	if (ft_check_sorted(m_stack->a) == 1)
 		exit(EXIT_SUCCESS);
+	move = ft_print_moves();
 	if (m_stack->m_size == 2)
 		ft_ps_swap(&m_stack->a, move->swap_a);
 	else if (m_stack->m_size == 3)
 		ft_algo_3(m_stack, move);
-	else if (m_stack->m_size > 3 && m_stack->m_size < 5)
+	else if (m_stack->m_size <= 5)
 		ft_algo_5(m_stack, move);
 	else
 		ft_radix(m_stack, move);

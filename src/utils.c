@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:35:19 by csenand           #+#    #+#             */
-/*   Updated: 2023/04/03 12:09:51 by loulou           ###   ########.fr       */
+/*   Updated: 2023/04/03 16:59:09 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ void	ft_err(t_stack *m_stack)
 {
 	ft_free_stack(&m_stack->a);
 	ft_free_m_stack(&m_stack);
-	printf("%sError%s\n", R, RESET);
-	exit(1);
+	// ft_putstr_fd("Error\n", 2);
+	ft_putendl_fd("Error", 2);
+	exit(EXIT_FAILURE);
 }
 
 /*		Check for duplicates	*/
