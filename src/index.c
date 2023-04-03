@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
+/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:34:04 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/31 12:41:23 by csenand          ###   ########.fr       */
+/*   Updated: 2023/04/03 12:13:35 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+/*
+**	Assigns an index for each numbers in the stack,
+**	it's easier to work with index than the inputted nbrs
+*/
 void	ft_assign_index(t_node *stack, int size)
 {
 	int		i;
@@ -38,6 +42,7 @@ void	ft_assign_index(t_node *stack, int size)
 	}
 }
 
+/*	Find the max value inside the stack		*/
 int	ft_ps_max_value(t_node *stack)
 {
 	int		max;
@@ -54,6 +59,7 @@ int	ft_ps_max_value(t_node *stack)
 	return (max);
 }
 
+/*	Find the max digits of the naax value inside the stack	*/
 int	ft_ps_max_digits(t_node *stack)
 {
 	int max;
@@ -66,6 +72,7 @@ int	ft_ps_max_digits(t_node *stack)
 	return (max_bits);
 }
 
+/*	Find the min value inside the stack		*/
 int	ft_ps_min_value(t_node *stack)
 {
 	int		min;
@@ -82,6 +89,7 @@ int	ft_ps_min_value(t_node *stack)
 	return (min);
 }
 
+/*	Radix algo to sort large numbers	*/
 void	ft_radix(t_stack *m_stack, t_move *move)
 {
 	t_node	*temp;

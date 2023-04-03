@@ -16,8 +16,9 @@ SRCS_LST	= 	main.c \
 				algo.c \
 				index.c \
 				moves.c \
-				node_utils.c \
-				utils.c	
+				utils.c	\
+				init_utils.c \
+				node_utils.c
 				
 SRCS		=	$(addprefix $(SRCS_DIR), $(SRCS_LST))
 

@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   node_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
+/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:35:03 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/30 17:51:46 by csenand          ###   ########.fr       */
+/*   Updated: 2023/04/03 11:23:35 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+/*		Fct that adds a node to the last created node	*/
 void	ft_ps_addback(t_node **stack, t_node *data_in)
 {
 	t_node	*add_last;
@@ -29,6 +30,7 @@ void	ft_ps_addback(t_node **stack, t_node *data_in)
 	add_last->next = data_in;
 }
 
+/*		Fct that creates a node		*/
 t_node	*ft_ps_new_node(int data)
 {
 	t_node	*new_node;
@@ -42,6 +44,7 @@ t_node	*ft_ps_new_node(int data)
 	return (new_node);
 }
 
+/*		Fct that calculates the stack's size	*/
 int	ft_ps_stack_size(t_node *stack)
 {
 	int		i;
@@ -59,6 +62,7 @@ int	ft_ps_stack_size(t_node *stack)
 	return (i);
 }
 
+/*		Fct that frees each stack (a or b)	*/
 void	ft_free_stack(t_node **stack)
 {
 	t_node	*tmp;
@@ -74,6 +78,7 @@ void	ft_free_stack(t_node **stack)
 	*stack = NULL;
 }
 
+/*		Fct that frees the 'm_stack'	*/
 void	ft_free_m_stack(t_stack **stack)
 {
 	if (!stack || !*stack)

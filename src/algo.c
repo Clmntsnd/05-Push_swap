@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
+/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:34:39 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/31 14:14:29 by csenand          ###   ########.fr       */
+/*   Updated: 2023/04/03 12:08:36 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+/*		Checks if nbrs are already sorted	*/
 int	ft_check_sorted(t_node *stack)
 {
 	t_node	*temp;
@@ -26,6 +27,7 @@ int	ft_check_sorted(t_node *stack)
 	return (1);
 }
 
+/*		Algo for 3 nbrs only		*/
 void	ft_algo_3(t_stack *stack, t_move *move)
 {
 	int	max;
@@ -41,6 +43,7 @@ void	ft_algo_3(t_stack *stack, t_move *move)
 		ft_ps_swap(&stack->a, move->swap_a);
 }
 
+/*		Algo for nbrs >3 and <= 5 (using the algo_3)	*/
 void	ft_algo_5(t_stack *stack, t_move *move)
 {
 	while (ft_ps_stack_size(stack->a) > 3)
@@ -60,6 +63,7 @@ void	ft_algo_5(t_stack *stack, t_move *move)
 	}
 }
 
+/*		Fct that parse the 	*/
 void	ft_sort_algo(t_stack *m_stack)
 {
 	t_move	*move;

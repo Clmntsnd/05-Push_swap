@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
+/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:34:20 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/30 17:54:21 by csenand          ###   ########.fr       */
+/*   Updated: 2023/04/03 12:10:44 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 //TODO mettre des 'static' en debut de fonction (lorsque qu'elles sont 
 //	   utilisee seulement dans le fichier actuel)
 //TODO faire le parsing de la string
-//TODO faire l'algo de 5
-//TODO modifier le ft_err pour mettre seulement "error"
 //TODO add comments above function s to describe them
 //TODO check final de tous les headers (loulou vs csenand)
 

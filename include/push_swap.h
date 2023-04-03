@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
+/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:48:23 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/31 12:31:09 by csenand          ###   ########.fr       */
+/*   Updated: 2023/04/03 11:54:32 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ typedef struct s_node
 	int				data;
 	int				index;
 	struct s_node	*next;
-	struct s_node	*previous;
 }					t_node;
 
 typedef struct s_move
@@ -60,12 +59,13 @@ int		ft_parse_arg(int ac, char **av, t_stack *m_stack);
 /*
 **	Print message
 */
-void	ft_err(const char *msg, t_stack *m_stack);
+void	ft_err(t_stack *m_stack);
 t_move	*ft_print_moves(void);
 
 /*
 **	Node related functions
 */
+void	ft_m_stack_init(t_stack *m_stack);
 void	ft_ps_addback(t_node **stack, t_node *data_in);
 t_node	*ft_ps_new_node(int content);
 void	ft_check_duplicates(t_stack *m_stack, t_node *stack);
@@ -74,7 +74,6 @@ int		ft_ps_stack_size(t_node *stack);
 /*
 **	Move related functions
 */
-void	ft_m_stack_init(t_stack *m_stack);
 void	ft_ps_push(t_node **from, t_node **to, char *move);
 void	ft_ps_swap(t_node **stack, char *move);
 void	ft_ps_rot(t_node **stack, char *move);

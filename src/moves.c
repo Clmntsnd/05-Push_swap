@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
+/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:34:53 by csenand           #+#    #+#             */
-/*   Updated: 2023/03/30 17:51:05 by csenand          ###   ########.fr       */
+/*   Updated: 2023/04/03 13:22:49 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+/*		Push either stack_a or stack_b		*/
 void	ft_ps_push(t_node **from, t_node **to, char *move)
 {
 	t_node	*tmp;
@@ -25,6 +26,7 @@ void	ft_ps_push(t_node **from, t_node **to, char *move)
 	printf("%s\n", move);
 }
 
+/*		Swap either stack_a or stack_b		*/
 void	ft_ps_swap(t_node **stack, char *move)
 {
 	t_node	*tmp;
@@ -38,6 +40,7 @@ void	ft_ps_swap(t_node **stack, char *move)
 	printf("%s\n", move);
 }
 
+/*		Rotate either stack_a or stack_b		*/
 void	ft_ps_rot(t_node **stack, char *move)
 {
 	t_node	*tmp;
@@ -53,6 +56,7 @@ void	ft_ps_rot(t_node **stack, char *move)
 	printf("%s\n", move);
 }
 
+/*		Reverse rotate either stack_a or stack_b		*/
 void	ft_ps_rev_rot(t_node **stack, char *move)
 {
 	t_node	*last;
