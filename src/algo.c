@@ -6,7 +6,7 @@
 /*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:34:39 by csenand           #+#    #+#             */
-/*   Updated: 2023/04/03 12:08:36 by loulou           ###   ########.fr       */
+/*   Updated: 2023/04/03 13:28:10 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	ft_algo_5(t_stack *stack, t_move *move)
 	}
 }
 
-/*		Fct that parse the 	*/
+/*		Fct that parse the stacks per their size	*/
 void	ft_sort_algo(t_stack *m_stack)
 {
 	t_move	*move;

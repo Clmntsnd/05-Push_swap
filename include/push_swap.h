@@ -6,7 +6,7 @@
 /*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:48:23 by csenand           #+#    #+#             */
-/*   Updated: 2023/04/03 11:54:32 by loulou           ###   ########.fr       */
+/*   Updated: 2023/04/03 13:55:32 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,10 @@ typedef struct s_move
 {
 	char			*push_a;
 	char			*push_b;
-	char			*swap;
 	char			*swap_a;
 	char			*swap_b;
-	char			*rotate;
 	char			*rotate_a;
 	char			*rotate_b;
-	char			*reverse;
 	char			*reverse_a;
 	char			*reverse_b;
 }					t_move;
@@ -80,7 +77,7 @@ void	ft_ps_rot(t_node **stack, char *move);
 void	ft_ps_rev_rot(t_node **stack, char *move);
 
 /*
-**	Free functions
+**	Free related functions
 */
 void	ft_free_m_stack(t_stack **stack);
 void	ft_free_stack(t_node **stack);
