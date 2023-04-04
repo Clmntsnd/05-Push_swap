@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:48:23 by csenand           #+#    #+#             */
-/*   Updated: 2023/04/03 20:23:02 by loulou           ###   ########.fr       */
+/*   Updated: 2023/04/04 12:59:11 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,9 @@ typedef struct s_stack
 /*
 **	Parsing
 */
-int		ft_parse_arg(int ac, char **av, t_stack *m_stack);
+int		ft_parse_args(int ac, char **av, t_stack *m_stack);
+int		ft_parse_string(char **av, t_stack *m_stack);
+void	ft_parse(int ac, char **av, t_stack *m_stack);
 
 /*
 **	Print message
@@ -81,6 +83,7 @@ void	ft_ps_rev_rot(t_node **stack, char *move);
 */
 void	ft_free_m_stack(t_stack **stack);
 void	ft_free_stack(t_node **stack);
+char	*ft_free_tab(char **tab);
 
 /*
 **	Algo related functions

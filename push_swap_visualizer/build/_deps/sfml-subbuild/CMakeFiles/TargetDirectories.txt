@@ -1,3 +1,0 @@
-/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-subbuild/CMakeFiles/sfml-populate.dir
-/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-subbuild/CMakeFiles/edit_cache.dir
-/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-subbuild/CMakeFiles/rebuild_cache.dir
