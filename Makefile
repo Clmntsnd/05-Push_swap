@@ -5,8 +5,8 @@ NAME		=	push_swap
 
 # -- Compilation Flag -- #
 CC			=	gcc
-CFLAGS		=	-Wall -Wextra -Werror -g
-# CFLAGS		=	-Wall -Wextra -Werror -g -Wunreachable-code -fsanitize=address
+# CFLAGS		=	-Wall -Wextra -Werror -g
+CFLAGS		=	-Wall -Wextra -Werror -g -Wunreachable-code -fsanitize=address
 
 # -- Remove -- #
 RM			=	rm -rf

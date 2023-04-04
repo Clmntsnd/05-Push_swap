@@ -1,22 +1,18 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/30 17:34:20 by csenand           #+#    #+#             */
-/*   Updated: 2023/04/04 15:00:24 by csenand          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-//TODO mettre des 'static' en debut de fonction (lorsque qu'elles sont 
+// TODO mettre des 'static' en debut de fonction (lorsque qu'elles sont 
 //	   utilisee seulement dans le fichier actuel)
-//TODO faire le parsing de la string
-//TODO check final de tous les headers (loulou vs csenand)
+// TODO check final de tous les headers (loulou vs csenand)
+// TODO se below
 
+/*
+**	ISSUES TO FIX
+**	- minor leaks w/ only a space : ./push_swap " "
+**	- TLE on basic test
+**	- double check w/ valgrind about free in is_sorted
+**	- 2 edge case w/ 5 nbrs when it's in descending order (./push_swap 5 4 3 2 1) 
+*/
 
 
 int	main(int ac, char **av)

@@ -12,6 +12,11 @@ void	print_list(t_node *stack_a)
 	printf("\n");
 }
 
+// int	ft_is_number(char **s)
+// {
+
+// }
+
 /*		Parsing the inputted numbers (works only for several args)	*/
 int	ft_parse_args(int ac, char **av, t_stack *m_stack)
 {
@@ -55,7 +60,7 @@ int	ft_parse_string(char **av, t_stack *m_stack)
 		while (s[i][++j])
 		{
 			nb = ft_atol(s[i]);
-			if ((av[i][j] == '-' || av[i][j] == '+') && av[i][j] != '\0')
+			if ((s[i][j] == '-' || s[i][j] == '+') && s[i][j] != '\0')
 				j++;
 			if (!ft_isdigit(s[i][j]) || nb < INT_MIN || nb > INT_MAX)
 				ft_err(m_stack);
