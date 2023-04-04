@@ -1,4 +1,4 @@
-# Install script for directory: /Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics
+# Install script for directory: /Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,8 +39,8 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "bin" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES
-    "/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-graphics.2.5.1.dylib"
-    "/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-graphics.2.5.dylib"
+    "/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-graphics.2.5.1.dylib"
+    "/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-graphics.2.5.dylib"
     )
   foreach(file
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libsfml-graphics.2.5.1.dylib"
@@ -49,8 +49,8 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "bin" OR NOT CMAKE_INSTALL_COMPONENT)
     if(EXISTS "${file}" AND
        NOT IS_SYMLINK "${file}")
       execute_process(COMMAND /usr/bin/install_name_tool
-        -delete_rpath "/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/sfml-build/lib"
-        -delete_rpath "/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/sfml-src/extlibs/libs-osx/Frameworks"
+        -delete_rpath "/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-build/lib"
+        -delete_rpath "/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-src/extlibs/libs-osx/Frameworks"
         "${file}")
       if(CMAKE_INSTALL_DO_STRIP)
         execute_process(COMMAND "/Library/Developer/CommandLineTools/usr/bin/strip" -x "${file}")
@@ -60,12 +60,12 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "bin" OR NOT CMAKE_INSTALL_COMPONENT)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "bin" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-graphics.dylib")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-graphics.dylib")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libsfml-graphics.dylib" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libsfml-graphics.dylib")
     execute_process(COMMAND /usr/bin/install_name_tool
-      -delete_rpath "/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/sfml-build/lib"
-      -delete_rpath "/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/sfml-src/extlibs/libs-osx/Frameworks"
+      -delete_rpath "/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-build/lib"
+      -delete_rpath "/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-src/extlibs/libs-osx/Frameworks"
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libsfml-graphics.dylib")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/Library/Developer/CommandLineTools/usr/bin/strip" -x "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libsfml-graphics.dylib")

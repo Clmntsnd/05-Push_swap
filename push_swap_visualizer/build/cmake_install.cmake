@@ -1,4 +1,4 @@
-# Install script for directory: /Users/csenand/Documents/05-Push_swap/push_swap_visualizer
+# Install script for directory: /Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,17 +39,17 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/dependencies/cmake_install.cmake")
+  include("/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/dependencies/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/src/cmake_install.cmake")
+  include("/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/src/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/tests/cmake_install.cmake")
+  include("/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/tests/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -60,5 +60,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

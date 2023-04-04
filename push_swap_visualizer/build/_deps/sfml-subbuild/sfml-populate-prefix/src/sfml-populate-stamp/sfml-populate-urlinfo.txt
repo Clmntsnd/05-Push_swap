@@ -3,9 +3,9 @@
 # No other meaning or use of this file is supported.
 
 method=url
-command=/Users/csenand/.brew/Cellar/cmake/3.25.3/bin/cmake;-P;/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/download-sfml-populate.cmake;COMMAND;/Users/csenand/.brew/Cellar/cmake/3.25.3/bin/cmake;-P;/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/verify-sfml-populate.cmake;COMMAND;/Users/csenand/.brew/Cellar/cmake/3.25.3/bin/cmake;-P;/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/extract-sfml-populate.cmake
-source_dir=/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/sfml-src
-work_dir=/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps
+command=/opt/homebrew/Cellar/cmake/3.26.2/bin/cmake;-P;/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/download-sfml-populate.cmake;COMMAND;/opt/homebrew/Cellar/cmake/3.26.2/bin/cmake;-P;/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/verify-sfml-populate.cmake;COMMAND;/opt/homebrew/Cellar/cmake/3.26.2/bin/cmake;-P;/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/extract-sfml-populate.cmake
+source_dir=/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-src
+work_dir=/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps
 url(s)=https://github.com/SFML/SFML/releases/download/2.5.1/SFML-2.5.1-sources.zip
 hash=
 no_extract=

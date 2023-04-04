@@ -7,7 +7,7 @@ if(CMAKE_VERSION VERSION_LESS "2.8.3")
    message(FATAL_ERROR "CMake >= 2.8.3 required")
 endif()
 cmake_policy(PUSH)
-cmake_policy(VERSION 2.8.3...3.23)
+cmake_policy(VERSION 2.8.3...3.24)
 #----------------------------------------------------------------
 # Generated CMake target import file.
 #----------------------------------------------------------------
@@ -54,14 +54,14 @@ unset(_cmake_expected_targets)
 add_library(sfml-system SHARED IMPORTED)
 
 set_target_properties(sfml-system PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/sfml-src/include"
+  INTERFACE_INCLUDE_DIRECTORIES "/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-src/include"
 )
 
 # Create imported target sfml-window
 add_library(sfml-window SHARED IMPORTED)
 
 set_target_properties(sfml-window PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/sfml-src/include"
+  INTERFACE_INCLUDE_DIRECTORIES "/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-src/include"
   INTERFACE_LINK_LIBRARIES "sfml-system"
 )
 
@@ -69,15 +69,15 @@ set_target_properties(sfml-window PROPERTIES
 add_library(OpenGL INTERFACE IMPORTED)
 
 set_target_properties(OpenGL PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework"
-  INTERFACE_LINK_LIBRARIES "/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework;/Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework"
+  INTERFACE_INCLUDE_DIRECTORIES "/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/OpenGL.framework"
+  INTERFACE_LINK_LIBRARIES "/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/OpenGL.framework;/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/OpenGL.framework"
 )
 
 # Create imported target sfml-graphics
 add_library(sfml-graphics SHARED IMPORTED)
 
 set_target_properties(sfml-graphics PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/sfml-src/include"
+  INTERFACE_INCLUDE_DIRECTORIES "/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-src/include"
   INTERFACE_LINK_LIBRARIES "sfml-window"
 )
 
@@ -85,28 +85,28 @@ set_target_properties(sfml-graphics PROPERTIES
 add_library(Freetype INTERFACE IMPORTED)
 
 set_target_properties(Freetype PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/sfml-src/extlibs/headers/freetype2"
-  INTERFACE_LINK_LIBRARIES "/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/sfml-src/extlibs/libs-osx/Frameworks/freetype.framework"
+  INTERFACE_INCLUDE_DIRECTORIES "/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-src/extlibs/headers/freetype2;/opt/homebrew/include/freetype2"
+  INTERFACE_LINK_LIBRARIES "/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-src/extlibs/libs-osx/Frameworks/freetype.framework"
 )
 
 # Import target "sfml-system" for configuration ""
 set_property(TARGET sfml-system APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
 set_target_properties(sfml-system PROPERTIES
-  IMPORTED_LOCATION_NOCONFIG "/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-system.2.5.1.dylib"
+  IMPORTED_LOCATION_NOCONFIG "/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-system.2.5.1.dylib"
   IMPORTED_SONAME_NOCONFIG "@rpath/libsfml-system.2.5.dylib"
   )
 
 # Import target "sfml-window" for configuration ""
 set_property(TARGET sfml-window APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
 set_target_properties(sfml-window PROPERTIES
-  IMPORTED_LOCATION_NOCONFIG "/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-window.2.5.1.dylib"
+  IMPORTED_LOCATION_NOCONFIG "/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-window.2.5.1.dylib"
   IMPORTED_SONAME_NOCONFIG "@rpath/libsfml-window.2.5.dylib"
   )
 
 # Import target "sfml-graphics" for configuration ""
 set_property(TARGET sfml-graphics APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
 set_target_properties(sfml-graphics PROPERTIES
-  IMPORTED_LOCATION_NOCONFIG "/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-graphics.2.5.1.dylib"
+  IMPORTED_LOCATION_NOCONFIG "/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-graphics.2.5.1.dylib"
   IMPORTED_SONAME_NOCONFIG "@rpath/libsfml-graphics.2.5.dylib"
   )
 

@@ -1,4 +1,4 @@
-# Install script for directory: /Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/catch2-subbuild
+# Install script for directory: /Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/catch2-subbuild
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/csenand/Documents/05-Push_swap/push_swap_visualizer/build/_deps/catch2-subbuild/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/build/_deps/catch2-subbuild/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

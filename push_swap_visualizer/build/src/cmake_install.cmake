@@ -1,4 +1,4 @@
-# Install script for directory: /Users/csenand/Documents/05-Push_swap/push_swap_visualizer/src
+# Install script for directory: /Users/loulou/Documents/42/05-Push_swap/push_swap_visualizer/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
