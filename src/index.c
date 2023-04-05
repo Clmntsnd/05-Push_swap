@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:34:04 by csenand           #+#    #+#             */
-/*   Updated: 2023/04/03 20:07:27 by loulou           ###   ########.fr       */
+/*   Updated: 2023/04/05 12:59:12 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	ft_ps_min_value(t_node *stack)
 }
 
 /*	Radix algo to sort large numbers	*/
-void	ft_radix(t_stack *m_stack, t_move *move)
+void	ft_radix(t_stack *m_stack)
 {
 	t_node	*temp;
 	int		i;
@@ -109,12 +109,12 @@ void	ft_radix(t_stack *m_stack, t_move *move)
 		{
 			temp = m_stack->a;
 			if (((temp->index >> i) & 1) == 1)
-				ft_ps_rot(&m_stack->a, move->rotate_a);
+				ft_ps_rot(&m_stack->a, "ra");
 			else
-				ft_ps_push(&m_stack->a, &m_stack->b, move->push_b);
+				ft_ps_push(&m_stack->a, &m_stack->b, "pb");
 		}
 		while (ft_ps_stack_size(m_stack->b) != 0)
-			ft_ps_push(&m_stack->b, &m_stack->a, move->push_a);
+			ft_ps_push(&m_stack->b, &m_stack->a, "pa");
 		i++;
 	}
 }

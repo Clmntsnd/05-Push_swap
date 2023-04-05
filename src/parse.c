@@ -1,24 +1,19 @@
-//TODO 42header
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/05 13:34:41 by csenand           #+#    #+#             */
+/*   Updated: 2023/04/05 14:04:05 by csenand          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	print_list(t_node *stack_a)
-{
-	while (stack_a)
-	{
-		printf("%d ", stack_a->data);
-		stack_a = stack_a->next;
-	}
-	printf("\n");
-}
-
-// int	ft_is_number(char **s)
-// {
-
-// }
-
 /*		Parsing the inputted numbers (works only for several args)	*/
-int	ft_parse_args(int ac, char **av, t_stack *m_stack)
+static	int	ft_parse_args(int ac, char **av, t_stack *m_stack)
 {
 	int		i;
 	int		j;
@@ -43,18 +38,14 @@ int	ft_parse_args(int ac, char **av, t_stack *m_stack)
 	return (1);
 }
 
-int	ft_parse_string(char **av, t_stack *m_stack)
+static int	ft_parse_string(char **s, t_stack *m_stack)
 {
-	char	**s;
 	int		i;
 	int		j;
 	long	nb;
 
-	s = ft_split(av[1], 32);
-	i = 0;
-	if (!s[i])
-		ft_err(m_stack);
-	while (s[i])
+	i = -1;
+	while (s[++i])
 	{
 		j = -1;
 		while (s[i][++j])
@@ -67,7 +58,6 @@ int	ft_parse_string(char **av, t_stack *m_stack)
 		}
 		ft_ps_addback(&m_stack->a, ft_ps_new_node((int)nb));
 		m_stack->m_size++;
-		i++;
 	}
 	ft_free_tab(s);
 	return (1);
@@ -75,8 +65,18 @@ int	ft_parse_string(char **av, t_stack *m_stack)
 
 void	ft_parse(int ac, char **av, t_stack *m_stack)
 {
+	char	**s;
+
 	if (ac == 2)
-		ft_parse_string(av, m_stack);
+	{
+		s = ft_split(av[1], ' ');
+		if (!s[0])
+		{
+			ft_free_tab(s);
+			ft_err(m_stack);
+		}
+		ft_parse_string(s, m_stack);
+	}
 	if (ac > 2)
 		ft_parse_args(ac, av, m_stack);
 	if (m_stack->m_size > 1)

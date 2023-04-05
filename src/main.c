@@ -1,25 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/05 12:58:50 by csenand           #+#    #+#             */
+/*   Updated: 2023/04/05 14:05:21 by csenand          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-// TODO mettre des 'static' en debut de fonction (lorsque qu'elles sont 
-//	   utilisee seulement dans le fichier actuel)
-// TODO check final de tous les headers (loulou vs csenand)
-// TODO se below
-
-/*
-**	ISSUES TO FIX
-**	- minor leaks w/ only a space : ./push_swap " "
-**	- TLE on basic test
-**	- double check w/ valgrind about free in is_sorted
-**	- 2 edge case w/ 5 nbrs when it's in descending order (./push_swap 5 4 3 2 1) 
-*/
-
 
 int	main(int ac, char **av)
 {
 	t_stack	*m_stack;
 
-	if (ac >= 2)
+	if (ac > 1)
 	{
 		m_stack = malloc(sizeof(t_stack));
 		if (!m_stack)

@@ -5,8 +5,8 @@ NAME		=	push_swap
 
 # -- Compilation Flag -- #
 CC			=	gcc
-# CFLAGS		=	-Wall -Wextra -Werror -g
-CFLAGS		=	-Wall -Wextra -Werror -g -Wunreachable-code -fsanitize=address
+CFLAGS		=	-Wall -Wextra -Werror
+# CFLAGS		=	-Wall -Wextra -Werror -g -Wunreachable-code -fsanitize=address
 
 # -- Remove -- #
 RM			=	rm -rf
@@ -18,7 +18,6 @@ SRCS_LST	= 	main.c \
 				index.c \
 				moves.c \
 				utils.c	\
-				init_utils.c \
 				node_utils.c \
 				parse.c
 				

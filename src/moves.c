@@ -6,7 +6,7 @@
 /*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:34:53 by csenand           #+#    #+#             */
-/*   Updated: 2023/04/04 12:08:42 by csenand          ###   ########.fr       */
+/*   Updated: 2023/04/05 11:20:48 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	ft_ps_push(t_node **from, t_node **to, char *move)
 	tmp->next = *to;
 	*to = tmp;
 	printf("%s\n", move);
-	// ft_putstr_fd(move, STDOUT_FILENO);
 }
 
 /*		Swap either stack_a or stack_b		*/
@@ -39,7 +38,6 @@ void	ft_ps_swap(t_node **stack, char *move)
 	tmp->next = *stack;
 	*stack = tmp;
 	printf("%s\n", move);
-	// ft_putstr_fd(move, STDOUT_FILENO);
 }
 
 /*		Rotate either stack_a or stack_b		*/
@@ -56,7 +54,6 @@ void	ft_ps_rot(t_node **stack, char *move)
 	last->next = tmp;
 	tmp->next = NULL;
 	printf("%s\n", move);
-	// ft_putstr_fd(move, STDOUT_FILENO);
 }
 
 /*		Reverse rotate either stack_a or stack_b		*/
@@ -75,5 +72,4 @@ void	ft_ps_rev_rot(t_node **stack, char *move)
 	prev->next = NULL;
 	*stack = last;
 	printf("%s\n", move);
-	// ft_putstr_fd(move, STDOUT_FILENO);
 }

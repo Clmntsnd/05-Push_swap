@@ -6,7 +6,7 @@
 #    By: csenand <csenand@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 15:11:55 by csenand           #+#    #+#              #
-#    Updated: 2023/03/31 11:34:59 by csenand          ###   ########.fr        #
+#    Updated: 2023/04/05 14:21:26 by csenand          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ AR			= 	ar rcs
 SRCS_DIR	=	./src/
 SRCS_LST	= 	ft_atof.c \
 				ft_atoi.c \
-				ft_atoi_base.c \
 				ft_atol.c \
 				ft_bzero.c \
 				ft_calloc.c \
@@ -40,7 +39,6 @@ SRCS_LST	= 	ft_atof.c \
 				ft_lstclear.c \
 				ft_lstdelone.c \
 				ft_lstiter.c \
-				ft_lstlast.c \
 				ft_lstmap.c \
 				ft_lstnew.c \
 				ft_lstsize.c \

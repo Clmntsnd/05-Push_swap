@@ -6,11 +6,19 @@
 /*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:35:19 by csenand           #+#    #+#             */
-/*   Updated: 2023/04/04 14:53:44 by csenand          ###   ########.fr       */
+/*   Updated: 2023/04/05 13:41:02 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+/*		Init 'm_stack' that'll host stack_a and stack_b	*/
+void	ft_m_stack_init(t_stack *m_stack)
+{
+	m_stack->a = NULL;
+	m_stack->b = NULL;
+	m_stack->m_size = 0;
+}
 
 /*		Display Error on the command line after freeing all the stacks	*/
 void	ft_err(t_stack *m_stack)

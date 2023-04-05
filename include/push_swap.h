@@ -6,7 +6,7 @@
 /*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:48:23 by csenand           #+#    #+#             */
-/*   Updated: 2023/04/04 12:59:11 by csenand          ###   ########.fr       */
+/*   Updated: 2023/04/05 14:15:37 by csenand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,12 @@
 # include <limits.h>
 # include "../lib/Libft/include/libft.h"
 
-# define G 		"\033[1;32m"
-# define R		"\033[1;31m"
-# define RESET	"\033[1;0m"
-
 typedef struct s_node
 {
 	int				data;
 	int				index;
 	struct s_node	*next;
 }					t_node;
-
-typedef struct s_move
-{
-	char			*push_a;
-	char			*push_b;
-	char			*swap_a;
-	char			*swap_b;
-	char			*rotate_a;
-	char			*rotate_b;
-	char			*reverse_a;
-	char			*reverse_b;
-}					t_move;
 
 typedef struct s_stack
 {
@@ -51,15 +35,12 @@ typedef struct s_stack
 /*
 **	Parsing
 */
-int		ft_parse_args(int ac, char **av, t_stack *m_stack);
-int		ft_parse_string(char **av, t_stack *m_stack);
 void	ft_parse(int ac, char **av, t_stack *m_stack);
 
 /*
-**	Print message
+**	Print Error message
 */
 void	ft_err(t_stack *m_stack);
-t_move	*ft_print_moves(void);
 
 /*
 **	Node related functions
@@ -93,6 +74,6 @@ void	ft_assign_index(t_node *stack, int size);
 int		ft_ps_max_digits(t_node *stack);
 int		ft_ps_min_value(t_node *stack);
 int		ft_ps_max_value(t_node *stack);
-void	ft_radix(t_stack *m_stack, t_move *move);
+void	ft_radix(t_stack *m_stack);
 
 #endif
