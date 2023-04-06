@@ -55,7 +55,7 @@ all : dir $(NAME)
 $(NAME): $(OBJS)
 	@make -C $(LIBFT_DIR)
 	@$(CC) $(CFLAGS) $(SRCS) $(LIBFT) -o $(NAME)
-	@echo "✅ $(GREEN)$(NAME)'s exectuable successfully created. ✅     $(RESET)"
+	@echo "✅ $(GREEN)$(NAME)'s exectuable successfully created.		✅$(RESET)"
 
 # -- Create all files .o (object) from files .c (source code) -- #
 $(OBJS_DIR)%.o: $(SRCS_DIR)%.c $(HEADER)
@@ -69,16 +69,16 @@ dir:
 # -- Removes objects -- #
 clean :
 	@make -C $(LIBFT_DIR) clean
-	@printf "💥 $(RED)Removing $(NAME)'s objects... $(RESET)💥\n"
+	@printf "💥 $(RED)Removing $(NAME)'s objects...$(RESET)			💥\n"
 	@$(RM) $(OBJS_DIR)
-	@printf "🗑️  $(CYAN)$(NAME)'s object successfully deleted.$(RESET) 🗑️\n"
+	@printf "🗑️  $(CYAN)$(NAME)'s object successfully deleted.$(RESET)		🗑️\n"
 
 # -- Removes objects (with clean) and executable -- #
 fclean : clean
-	@printf "💥 $(RED)Removing executable(s)... $(RESET)💥\n"
+	@printf "💥 $(RED)Removing executable(s)...$(RESET)				💥\n"
 	@$(RM) $(LIBFT)
 	@$(RM) $(NAME)
-	@printf "🗑️  $(CYAN)Executable(s) and archive(s) successfully deleted.$(RESET) 🗑️\n"
+	@printf "🗑️  $(CYAN)Executable(s) and archive(s) successfully deleted.$(RESET)	🗑️\n"
 
 # -- Removes objects and executable then remakes all -- #
 re : fclean all

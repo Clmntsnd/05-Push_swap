@@ -3,14 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csenand <csenand@student.42.fr>            +#+  +:+       +#+        */
+/*   By: loulou <loulou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 13:34:41 by csenand           #+#    #+#             */
-/*   Updated: 2023/04/05 14:04:05 by csenand          ###   ########.fr       */
+/*   Updated: 2023/04/05 19:59:46 by loulou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+static int	ft_isnumber(char *argv)
+{
+	int	i;
+
+	i = 0;
+	if ((argv[i] == 43 || argv[i] == 45) && argv[i + 1] != '\0')
+		i++;
+	while (argv[i] && ft_isdigit(argv[i]) == 1)
+		i++;
+	if (ft_isdigit(argv[i]) == 0 && argv[i] != '\0')
+		return (0);
+	return (1);
+}
 
 /*		Parsing the inputted numbers (works only for several args)	*/
 static	int	ft_parse_args(int ac, char **av, t_stack *m_stack)
@@ -28,7 +42,7 @@ static	int	ft_parse_args(int ac, char **av, t_stack *m_stack)
 			nb = ft_atol(av[i]);
 			if ((av[i][j] == '-' || av[i][j] == '+') && av[i][j] != '\0')
 				j++;
-			if (!ft_isdigit(av[i][j]) || nb < INT_MIN || nb > INT_MAX)
+			if (!ft_isnumber(av[i]) || nb < INT_MIN || nb > INT_MAX)
 				ft_err(m_stack);
 		}
 		ft_ps_addback(&m_stack->a, ft_ps_new_node((int)nb));
@@ -53,7 +67,7 @@ static int	ft_parse_string(char **s, t_stack *m_stack)
 			nb = ft_atol(s[i]);
 			if ((s[i][j] == '-' || s[i][j] == '+') && s[i][j] != '\0')
 				j++;
-			if (!ft_isdigit(s[i][j]) || nb < INT_MIN || nb > INT_MAX)
+			if (!ft_isnumber(s[i]) || nb < INT_MIN || nb > INT_MAX)
 				ft_err(m_stack);
 		}
 		ft_ps_addback(&m_stack->a, ft_ps_new_node((int)nb));
