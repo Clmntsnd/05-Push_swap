@@ -1,4 +1,14 @@
-#//TODO put 42 header here
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: csenand <csenand@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/04/07 11:12:58 by csenand           #+#    #+#              #
+#    Updated: 2023/04/07 12:58:28 by csenand          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 # -- Executable's name -- #
 NAME		=	push_swap
@@ -6,7 +16,7 @@ NAME		=	push_swap
 # -- Compilation Flag -- #
 CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror
-# CFLAGS		=	-Wall -Wextra -Werror -g -Wunreachable-code -fsanitize=address
+# CFLAGS		=	-Wall -Wextra -Werror -Wunreachable-code -fsanitize=address
 
 # -- Remove -- #
 RM			=	rm -rf
